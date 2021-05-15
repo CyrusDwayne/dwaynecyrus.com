@@ -1,0 +1,28 @@
+<!-- Meta Specs TODO Learn what all of this stuff is suppose to mean, and update. -->
+<meta charset="utf-8">
+<!-- <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="Resource-type" content="Document" /> -->
+<meta name="Resource-type" content="Document">
+<meta http-equiv="x-ua-compatible" content="ie=edge" />
+
+<!-- MEta Description -->
+<meta name="description"
+    content="The IRL Home of Dwayne">
+<meta name="author" content="Dwayne Cyrus">
+<meta name="keywords" content="islam, muslim, masculinity, manhood, mental health, design, art, creativity, business, branding, strategy" />
+
+{{/* <!-- Makes the website responsive --> */}}
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+{{/* <!-- Generates Hugo's built in Google Analytics --> */}}
+{{ template "_internal/google_analytics.html" . }}
+
+{{/* <!-- Generates Hugo specific data --> */}}
+{{ printf "<!--Hugo Build Date: %s-->" hugo.BuildDate | safeHTML }}
+{{ printf "<!--Hugo Commit Hash: %s-->" hugo.CommitHash | safeHTML }}
+{{ hugo.Generator -}}
+
+{{/* <!-- Displays the Site's title, and if there is a page title, that is set too --> */}}
+{{ $title := print .Title " | " .Site.Title }}
+{{ if .IsHome }}{{ $title = .Site.Title }}{{ end }}
+<title>{{ $title }}</title>

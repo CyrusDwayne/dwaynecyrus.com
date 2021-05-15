@@ -1,0 +1,8 @@
+{{ with .Get "customText" }}
+<blockquote class="callout tip">
+    <!-- TODO Add a tip icon or mascott -->
+    <p>
+<strong>Tip:</strong>&nbsp;{{ . | markdownify }}
+</p>
+</blockquote>
+{{ end }}

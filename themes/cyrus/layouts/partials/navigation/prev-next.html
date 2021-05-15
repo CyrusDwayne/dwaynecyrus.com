@@ -1,0 +1,32 @@
+<!-- <nav > -->
+    <ol class="prev-next">
+  
+  
+  <li class="prev-next-nav__previous">
+    {{ with .PrevInSection }}
+      <!-- <img src="/svg/chevron-left.svg" alt=""> -->
+      <dl>
+        <dt>Older</dt>
+        <dd><a href="{{.Permalink}}">{{- .Title -}}</a></dd>
+      </dl>
+      {{ end }}
+    </li>
+    
+  
+  <!-- TODO Consider putting a middle button that goes back to the list -->
+  
+  
+  <li class="prev-next__next">
+    {{ with .NextInSection }}
+      <dl>
+        <dt>Newer</dt>
+        <dd><a href="{{.Permalink}}">{{- .Title -}}</a></dd>
+      </dl>
+      <!-- TODO Add left and right arrows, consider adding content type when applicable in Blog view -->
+      <!-- <img src="/svg/chevron-right.svg" alt=""> -->
+      {{ end }}
+      </li>
+    
+    </ol>
+  <!-- </nav> -->
+  

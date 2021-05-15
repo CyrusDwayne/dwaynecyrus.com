@@ -1,0 +1,11 @@
+{{ with .Params.authors -}}
+<dl class="author-name">
+ <dt>Authors</dt>
+  {{ range . }}
+  <dd>
+    {{ $href := print (absURL "authors/") (urlize .) }}
+    <a href="{{ $href }}">{{- . -}}</a>
+    </dd>
+  {{ end }}{{/* <!-- /range . --> */}}
+  </dl>
+{{ end }}

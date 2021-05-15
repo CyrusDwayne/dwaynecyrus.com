@@ -1,0 +1,281 @@
+# disableKinds = ["section", "RSS", "sitemap", "robotsTXT"]
+
+# Declares what theme to use. Be sure to comment out if you are not using a theme or you will get an error. // Name of the Hugo theme you want to activate, if blank comment it out or it will error the build
+theme = "cyrus"
+# themesDir = "../.."
+
+# Base domain/URL ("http://example.org/") of your website, use 'baseURL = "/"' for local testing with the 'hugo' command
+baseURL = "https://dwaynecyrus.com/"
+
+# The title of your website
+title = "For the Sake of Allah (SWT)"
+
+# Declares the default language of your code
+languageCode = "en-us"
+
+# Declares the default language of your content when using multiple languages
+DefaultContentLanguage = "en"
+
+# Google Analytics
+googleAnalytics = "UA-60532225-1"
+
+# Activates Hugo's built-in section menu called lazyBloggers
+sectionPagesMenu = "lazyBloggers"
+
+# Set's default number of posts when using built in pagination TODO learn how to use this and impliment it into the default list //  TODO Be sure to test this with the built-in pagination
+Paginate = 16
+
+# Allows for the tanslation and use of emoji shorthand, reference https://www.webfx.com/tools/emoji-cheat-sheet/ // Allows for the tanslation and use of emoji shorthand // For emojis in content files, set // reference https://www.webfx.com/tools/emoji-cheat-sheet/ or https://gohugo.io/functions/emojify/ 
+enableEmoji = true # BUG The emoji's are not working, at least not on the home page
+
+[markup]
+[markup.tableOfContents]
+endLevel = 4
+ordered = false
+startLevel = 2
+
+# TAXONOMIES: 'Tag' and 'category' are Hugo's default taxonomies and only need to be declared if your going to use a custom taxonomy. Taxonomies cannot contain hypens or uppercase letters
+[taxonomies]
+author = "authors"
+category = "categories"
+collection = "collections"
+keyword = "keywords"
+series = "series"
+subject = "subjects"
+tag = "tags"
+topic = "topics"
+
+[Params]
+font_load_typekit = "https://use.typekit.net/rof4vpx.css"
+font_load_google_fonts = "https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap"
+alert_global = false
+alert_global_text = "You just made a Hugo blog from scratch."
+
+# TODO description of the website for meta data https://gohugo.io/variables/site/#example-siteparams
+# siteDescription = "are we using this for the meta or na...?"
+#     test = "heres some test text"
+#   mainSections = ["docs", "examples"]
+#   alertGlobal = true
+gardenSections = ["examples", "notes", "articles"]
+
+# Values for Related Content ----------------------------
+[Params.author.note.trigger]
+icon = ""
+message = "This right here is a trigger warning message."
+
+# Values for Related Content ----------------------------
+[Params.social.share]
+buffer = false
+digg = false
+email = true
+facebook = false
+instapaper = false
+linkedin = false
+mix = false
+pinterest = false
+pocket = false
+print = false
+reddit = false
+tumblr = false
+twitter = true
+url = false
+whatsapp = true
+yummly = false
+
+# Values for Related Content ----------------------------
+[Params.social.follow]
+[Params.social.follow.test]
+
+display = true
+name = "iTest"
+title = "ArtStation — Concept Designs for Entertainment Portfolio"
+url = "http://google.com"
+[Params.social.follow.broke]
+display = false
+name = "iBroke"
+url = "http://google.com"
+# 
+#
+#
+[Params.social.follow.500px]
+display = false
+icon = ""
+name = "500px"
+title = "Twitter — Concept Designs for Entertainment Portfolio"
+url = "#"
+
+[Params.social.follow.artstation]
+display = false
+name = "ArtStation"
+title = "Twitter — Concept Designs for Entertainment Portfolio"
+url = "#"
+[Params.social.follow.behance]
+display = false
+name = "Twitter"
+title = "Twitter — Concept Designs for Entertainment Portfolio"
+url = "#"
+[Params.social.follow.deviantart]
+display = false
+name = "Twitter"
+title = "Twitter — Concept Designs for Entertainment Portfolio"
+url = "#"
+[Params.social.follow.discord]
+display = false
+name = "Twitter"
+title = "Twitter — Concept Designs for Entertainment Portfolio"
+url = "#"
+[Params.social.follow.discourse]
+display = false
+name = "Twitter"
+title = "Twitter — Concept Designs for Entertainment Portfolio"
+url = "#"
+[Params.social.follow.dribbble]
+display = true
+name = "Dribbble"
+title = "Twitter — Concept Designs for Entertainment Portfolio"
+url = "#"
+weight = 3
+[Params.social.follow.email]
+display = false
+name = "Email"
+title = "Email — Concept Designs for Entertainment Portfolio"
+url = "#"
+[Params.social.follow.facebook]
+display = true
+name = "Facebook"
+title = "Twitter — Concept Designs for Entertainment Portfolio"
+url = "#"
+weight = 1
+[Params.social.follow.facebookmessenger]
+display = false
+name = "Twitter"
+title = "Twitter — Concept Designs for Entertainment Portfolio"
+url = "#"
+[Params.social.follow.git]
+display = false
+name = "Twitter"
+title = "Twitter — Concept Designs for Entertainment Portfolio"
+url = "#"
+[Params.social.follow.github]
+display = true
+name = "GitHub"
+title = "Twitter — Concept Designs for Entertainment Portfolio"
+url = "#"
+[Params.social.follow.gitkraken]
+display = false
+name = "Twitter"
+title = "Twitter — Concept Designs for Entertainment Portfolio"
+url = "#"
+[Params.social.follow.gitlab]
+display = false
+name = "Twitter"
+title = "Twitter — Concept Designs for Entertainment Portfolio"
+url = "#"
+[Params.social.follow.gitter]
+display = false
+name = "Twitter"
+title = "Twitter — Concept Designs for Entertainment Portfolio"
+url = "#"
+[Params.social.follow.hackernews]
+display = false
+name = "Twitter"
+title = "Twitter — Concept Designs for Entertainment Portfolio"
+url = "#"
+[Params.social.follow.instagram]
+display = true
+name = "Instagram"
+title = "Twitter — Concept Designs for Entertainment Portfolio"
+url = "#"
+
+[Params.social.follow.linkedin]
+display = true
+name = "LinkedIn"
+title = "Twitter — Concept Designs for Entertainment Portfolio"
+url = "#"
+[Params.social.follow.mailchimp]
+display = false
+name = "Twitter"
+title = "Twitter — Concept Designs for Entertainment Portfolio"
+url = "#"
+[Params.social.follow.mastodon]
+display = false
+name = "Twitter"
+title = "Twitter — Concept Designs for Entertainment Portfolio"
+url = "#"
+[Params.social.follow.medium]
+display = false
+name = "Twitter"
+title = "Twitter — Concept Designs for Entertainment Portfolio"
+url = "#"
+[Params.social.follow.pinterest]
+display = false
+name = "Twitter"
+title = "Twitter — Concept Designs for Entertainment Portfolio"
+url = "#"
+[Params.social.follow.quora]
+display = true
+name = "Quora"
+title = "Quora — Concept Designs for Entertainment Portfolio"
+url = "#"
+
+[Params.social.follow.reddit]
+display = false
+name = "Twitter"
+title = "Twitter — Concept Designs for Entertainment Portfolio"
+url = "#"
+[Params.social.follow.snapchat]
+display = false
+name = "Twitter"
+title = "Twitter — Concept Designs for Entertainment Portfolio"
+url = "#"
+[Params.social.follow.tumblr]
+display = false
+name = "Twitter"
+title = "Twitter — Concept Designs for Entertainment Portfolio"
+url = "#"
+[Params.social.follow.twitter]
+display = true
+name = "Twitter"
+title = "Twitter — Concept Designs for Entertainment Portfolio"
+url = "#"
+[Params.social.follow.vimeo]
+display = false
+name = "Twitter"
+title = "Twitter — Concept Designs for Entertainment Portfolio"
+url = "#"
+
+[Params.social.follow.youtube]
+display = true
+name = "YouTube"
+title = "Twitter — Concept Designs for Entertainment Portfolio"
+url = "#"
+
+# Values for Related Content ----------------------------
+[related]
+includeNewer = true
+threshold = 100.0
+toLower = false
+
+[[related.indices]]
+name = "collections"
+weight = 90.0
+
+[[related.indices]]
+name = "categories"
+weight = 80.0
+
+[[related.indices]]
+name = "subjects"
+weight = 70.0
+
+[[related.indices]]
+name = "topics"
+weight = 60.0
+
+[[related.indices]]
+name = "tags"
+weight = 50.0
+
+[[related.indices]]
+name = "date"
+weight = 40.0

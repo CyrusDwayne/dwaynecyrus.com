@@ -1,0 +1,8 @@
+{{ with .Type }}
+<dl class="content-type">
+ <dt>Type</dt>
+       <dd>
+        {{- singularize . -}}
+      </dd>
+</dl>
+{{ end }}

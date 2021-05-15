@@ -1,0 +1,39 @@
+<h4>Content Details</h4>
+<ul class="content-metadata">
+    <li>
+      <!-- TODO This needs to link to the authors profile and list of articles. Or, it shows up as an author profile that lists their stuff. OR it just links to the content of that author. -->
+      {{ partial "post/authors" . }}
+
+    </li>
+
+    <li>
+      {{ partial "post/categories" . }}
+    </li>
+
+    <li>
+      {{ partial "post/series" . }}
+    </li>
+
+    <li>
+      {{ partial "post/date-published" . }}
+    </li>
+
+    <li>
+      {{ partial "post/date-modified" . }}
+    </li>
+
+    <li>
+      {{ partial "post/read-time" . }}
+    </li>
+
+    <li>
+      <dl>
+        <dt>Count Stats</dt>
+        <dd>{{ partial "post/word-count" . }} words</dd>
+          <dd>{{ partial "post/character-count" . }} characters (minus spaces)</dd>
+      </dl>
+    </li>
+    <!-- TODO Add attachments/ downloads -->
+  </ul>
+  {{ partial "post/text-count.html" . }}
+  {{ partial "post/series.html" . }}

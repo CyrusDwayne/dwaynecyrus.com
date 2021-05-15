@@ -1,0 +1,29 @@
+{{ with .Params.authorNote }}
+<dl class="category-list">
+<dt>Author's Note</dt>
+<dd>{{ . }}</dd>
+</dl>
+
+{{ else }}
+
+{{ if eq (.Params.authorNoteType) ("trigger") }}
+{{/* <!-- TODO Turn this  into a config file controlled thing --> */}}
+<dl class="category-list">
+    <dt>Trigger Warning</dt>
+    <dd>Hello I am a trigger warning message</dd>
+    </dl>
+
+{{ else }}
+
+{{ if eq (.Params.authorNoteType) ("disclaimer") }}
+{{/* <!-- TODO Turn this  into a config file controlled thing --> */}}
+<dl class="category-list">
+    <dt>Disclaimer/Disclosur</dt>
+    <dd>Hello I am a message of full disclosure</dd>
+    </dl>
+
+    {{/* <!-- TODO Add a message for sponsored or add focused brand deal stuff --> */}}
+{{ end }}
+
+{{ end }}
+{{ end }}

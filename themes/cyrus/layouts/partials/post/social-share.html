@@ -1,0 +1,196 @@
+<!-- Social Share Button HTML -->
+<!-- TODO Be sure to do more testing of these links to see if you can get some front matter auto-placed. Also setup the control variable in the config file. Here's a link for reference: https://codingnconcepts.com/hugo/social-icons-hugo/ -->
+
+{{ if eq .Params.socialShare true }}
+
+<ol class="">
+  {{ $currentPage := . }}
+  {{ range .Site.Menus.read }}
+  <li
+      class=" {{if or ($currentPage.IsMenuCurrent "read" .) ($currentPage.HasMenuCurrent "read" .) }} active{{end}}">
+
+
+      {{ $icon := printf "<i data-feather=\"%s\"></i>" .Pre }}
+      {{ $text := print $icon " " .Name | safeHTML }}
+      <a class="nav-link" href="{{ .URL }}" title="{{ .Title }}">{{ $text }}</a>
+
+  </li>
+  {{ end }}
+</ol>
+
+<!-- NOTE Why is the above here>? -->
+
+
+
+
+
+
+
+
+{{ $title := .Title }}
+{{ $url := printf "%s" .Permalink }}
+{{ $body := print $title ", by " .Site.Title "\n" .Params.description "\n\n" $url "\n" }}
+
+<dl>
+<dt>Share</dt>
+<!-- TODO Make sure that twitter pulls the images  -->
+<!-- NOTE Twitter OLD REference -->
+{{ if .Site.Params.social.share.twitter | default true}}
+<!-- <dd>
+  <a href="//twitter.com/share?url={{ .Permalink }}&amp;text={{ .Title }}&amp;via={{ .Site.Social.twitter }}"
+    target="_blank" class="share-btn twitter">Twitter</a>
+</dd> -->
+{{ end }}
+
+<!-- Twitter -->
+{{ if .Site.Params.social.share.twitter | default true }}
+<dd>
+  <a href="https://twitter.com/intent/tweet?hashtags=codingnconcepts&amp;url={{ .Permalink }}&amp;text={{ .Title }}"
+    target="_blank" rel="noopener" aria-label="Share on Twitter" class="share-btn twitter">Twitter</a>
+</dd>
+{{ end }}
+
+
+<!-- Reddit -->
+{{ if .Site.Params.social.share.reddit | default true}}
+<dd>
+  <a href="//reddit.com/submit?url={{ .Permalink }}&amp;title={{ .Title }}" target="_blank"
+    class="share-btn reddit">Reddit</a>
+</dd>
+{{ end }}
+
+
+<!-- Mix -->
+<!-- TODO Test if working but is now called Mix -->
+{{ if .Site.Params.social.share.mix | default true}}
+<dd>
+  <a href="//www.stumbleupon.com/submit?url={{ .Permalink }}&amp;title={{ .Title }}" target="_blank"
+    class="share-btn mix">Mix</a>
+</dd>
+{{ end }}
+
+
+<!-- Pintrest -->
+<!-- TODO Make sure it grapbs the hero image -->
+{{ if .Site.Params.social.share.pinterest | default true}}
+<dd>
+  <a href="//www.pinterest.com/pin/create/button/?url={{ .Permalink }}&amp;description={{ .Title }}" target="_blank"
+    class="share-btn pinterest">Pinterest</a>
+</dd>
+{{ end }}
+
+
+<!-- Email -->
+{{ if .Site.Params.social.share.email | default true}}
+<dd>
+  <a href="mailto:?subject=Check out this post by {{ .Params.author }}&amp;body={{ .Permalink }}" target="_blank"
+    class="share-btn email">Email</a>
+  <!-- <a href="mailto:?subject={{ .Site.Title }} - {{ $title }}.&amp;body={{ $body }}" target="_blank" class="share-btn email"></a> -->
+</dd>
+{{ end }}
+
+
+<!-- Buffer -->
+<!-- TODO Test to ensure it works -->
+{{ if .Site.Params.social.share.buffer | default true}}
+<dd>
+  <a href="https://bufferapp.com/add?url={{ .Permalink }}&amp;description={{ .Title }}" target="_blank">Buffer</a>
+</dd>
+{{ end }}
+
+
+<!-- Facebook -->
+<!-- FIX For whatever reason using the `{ .Permalink )` breaks sharing. -->
+{{ if .Site.Params.social.share.facebook | default true}}
+<dd>
+  <a href="#">Facebook</a>
+  <!-- <a href="http://www.facebook.com/sharer.php?u=https://simplesharebuttons.com" target="_blank">Facebook Test 1</a> -->
+  <!-- <a href="https://www.facebook.com/sharer/sharer.php?url={{ .Permalink }}">Facebook Test 2</a> -->
+  <!-- <a href="https://www.facebook.com/sharer/sharer.php?u={{ .Permalink }}" target="_blank" class="share-btn facebook">Facebook Test 3</a> -->
+  <!-- <a href="https://www.facebook.com/sharer.php?u={{ $url }}" target="_blank" rel="noopener" aria-label="Share on Facebook" class="share-btn facebook">Facebook Test 4</a> -->
+</dd>
+{{ end }}
+
+
+<!-- LinkedIn -->
+<!-- FIX Not working -->
+{{ if .Site.Params.social.share.linkedin | default true}}
+<dd>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url={{ .Permalink }}" target="_blank">LinkedIn</a>
+  <!-- <a href="//www.linkedin.com/shareArticle?url={{ .Permalink }}&amp;title={{ .Title }}" target="_blank" class="share-btn linkedin">
+        <i class="fa fa-linkedin"></i>
+        <p>LinkedIn</p> -->
+  <!-- <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url={{ $url }}&amp;source={{ $url }}&amp;title={{ $title }}&amp;summary={{ $title }}" target="_blank" rel="noopener" aria-label="Share on LinkedIn" class="share-btn linkedin">LinkedIn New</a> -->
+</dd>
+{{ end }}
+
+
+<!-- Print -->
+<!-- IDEA Be sure to have a print mode and read mode in your css styles for the read button in browsers -->
+{{ if .Site.Params.social.share.print | default true }}
+<dd>
+  <a href="javascript:;" onclick="window.print()">
+    Print...really? Jk, JK, do your thang! Oh, it's for a PDF save...got you!
+  </a>
+  <!-- IDEA have those dialogue be some sort of fun pop up stuff -->
+</dd>
+{{ end }}
+
+
+<!-- Tumblr -->
+<!-- FIX The button errors out -->
+{{ if .Site.Params.social.share.tumblr | default true }}
+<dd>
+  <a href="http://www.tumblr.com/share/link?url={{ .Permalink }}&amp;title={{ .Title }}" target="_blank">Tumblr</a>
+</dd>
+{{ end }}
+
+<!-- Yummly -->
+<!-- TODO Test whether or not this works and it also seems spefic towards only food posts and possible recipes you put online -->
+{{ if .Site.Params.social.share.yummly | default true }}
+<dd>
+  <a href="http://www.yummly.com/urb/verify?url=https://simplesharebuttons.com&amp;title=Simple Share Buttons"
+    target="_blank">Yummly</a>
+  <!-- <a href="http://www.tumblr.com/share/link?url={{ .Permalink }}&amp;title={{ .Title }}" target="_blank">Tumblr</a> -->
+</dd>
+{{ end }}
+
+<!-- Digg -->
+{{ if .Site.Params.social.share.digg | default true }}
+<dd>
+  <a href="http://www.digg.com/submit?url=https://simplesharebuttons.com" target="_blank">Digg</a>
+</dd>
+{{ end }}
+
+<!-- Pocket -->
+<!-- TODO Setup a social share/save for pocket if possible, dont forget instapaper -->
+{{ if .Site.Params.social.share.pocket | default true }}
+<dd>
+  <a href="http://www.digg.com/submit?url=https://simplesharebuttons.com" target="_blank">Pocket</a>
+</dd>
+{{ end }}
+
+<!-- WhatsApp -->
+{{ if .Site.Params.social.share.whatsapp | default true }}
+<dd>
+  <a href="whatsapp://send?text={{ $body }}" target="_blank" class="share-btn whatsapp">WhatsApp</a>
+</dd>
+{{ end }}
+
+
+<!-- URL copy -->
+{{ if .Site.Params.social.share.url | default true }}
+<dd>
+  <a href="whatsapp://send?text={{ $body }}" target="_blank" class="share-btn whatsapp">WhatsApp</a>
+</dd>
+
+<!-- TODO Use this to copy code, but also to create the copy link button maybe even a shortened trackable link...ohhhh 
+https://www.dannyguo.com/blog/how-to-add-copy-to-clipboard-buttons-to-code-blocks-in-hugo/-->
+
+{{ .Permalink }}
+{{ end }}
+
+</dl>
+
+
+{{ end }}

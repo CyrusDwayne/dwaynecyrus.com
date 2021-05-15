@@ -1,0 +1,25 @@
+{{ if .Params.keyImageThumb }}
+<figure class="thumb-image">
+    <a href="{{ .RelPermalink }}"></a>
+  <div>
+    <!-- <div class="img-container"> -->
+    <img
+      src="{{ .Params.keyImageThumb }}"
+      alt="image from {{ if .Params.projectName }}{{- .Params.projectName -}}{{ else }}{{- .Params.keyImageAlt -}}{{ end }}"
+    />
+    <!-- </div> -->
+  </div>
+    <figcaption>
+      {{ if .Params.projectName }}
+      {{ .Params.projectName }} {{ else }} {{ .Params.keyImageCaption }}
+      {{ end }}
+      <!-- <p>{ { partial "subtitle.html" . }}</p> -->
+      <!-- TODO On hover effect show the subtitle -->
+      <!-- IDEA Consider Adding the <smal></smal> -->
+    </figcaption>
+</a>
+  </figure>
+  {{ end }}
+
+  <!--  TODO Update this for captions on post images
+    https://sebastiandedeyne.com/captioned-images-with-markdown-render-hooks-in-hugo/ -->

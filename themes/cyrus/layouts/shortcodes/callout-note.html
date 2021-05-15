@@ -1,0 +1,8 @@
+{{ with .Get "customText" }}
+<blockquote class="callout note">
+    <!-- TODO Add a info icon or mascott -->
+    <p>
+<strong>Note:</strong>&nbsp;{{ . | markdownify }}
+</p>
+</blockquote>
+{{ end }}

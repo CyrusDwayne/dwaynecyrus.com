@@ -1,0 +1,17 @@
+{{ if eq .Params.alert true }}
+<div>
+<!-- <h3>Alert MEssage</h3> -->
+
+{{ with .Params.alertMessage }}
+<p>
+<strong>Alert Message:</strong> {{ . | markdownify }}
+</p>
+{{ else }}
+<p> This is my alert message for you to close?</p>
+{{ end }}
+</div>
+
+
+
+
+{{ end }}

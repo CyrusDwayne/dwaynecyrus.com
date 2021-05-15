@@ -1,0 +1,12 @@
+<!-- TODO This is part of the TOC and book build from https://github.com/alex-shpak/hugo-book/blob/master/layouts/shortcodes/section.html -->
+
+<dl>
+    {{ range .Page.Pages }}
+      <dt>
+        <a href="{{ .RelPermalink }}">{{ partial "docs/title" . }}</a>
+      </dt>
+      <dd class="markdown-inner">
+        {{ default .Summary .Description }}
+      </dd>
+    {{ end }}
+    </dl>

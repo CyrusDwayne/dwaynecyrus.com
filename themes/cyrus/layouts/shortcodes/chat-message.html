@@ -1,0 +1,11 @@
+<div class="chat-message">
+    <div class="{{ with .Get "class" }}{{ . }}{{ end }}">
+        <figure>
+            <div>
+                {{ with .Get "imageURL" }}<img src="{{ . }}" alt="{{ .Get "imageAlt" }}">{{ end }}
+            </div>
+            <figcaption>{{ .Get "name" }}</figcaption>
+        </figure>
+        <p>{{ .Inner }}</p>
+    </div>
+</div>

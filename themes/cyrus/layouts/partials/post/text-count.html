@@ -1,0 +1,10 @@
+<!-- { { with .Params.textCountDisplay true }} -->
+<dl class="word-count">
+    <!-- <dt>Word&nbsp;Count:&nbsp;</dt> -->
+    <dt>Text Count</dt>
+    <dd>{{ .Content | countwords }} Words<br>{{ .Content | countrunes }} Characters(minus spaces)</dd>
+
+    <!-- <dt>Character&nbsp;Count&nbsp;(minus spaces):&nbsp;</dt> -->
+    <!-- <dd>{{ .Content | countrunes }} Characters(minus spaces)</dd> -->
+</dl>
+{{/* <!-- TODO replace all none letter characters with their HTML ascii codes --> */}}

@@ -1,0 +1,10 @@
+{{/* layouts/partials/GetFeatured.html */}}
+{{ return first . (where site.RegularPages "Params.featured" true) }}
+
+<ol class="range-list">
+    {{ range last 3 (where .Pages.ByPublishDate.Reverse ".Params.feature" "=" true) }}
+    <li class="range-list__item">
+        {{ .Render "li"}}
+    </li>
+    {{ end }}
+</ol>

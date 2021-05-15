@@ -1,0 +1,7 @@
+<!-- { { with .Params.character_count_display true }} -->
+<dl class="character-count">
+    <dt>Character&nbsp;Count&nbsp;(minus spaces):&nbsp;</dt>
+    <dd>{{ .Content | countrunes }}</dd>
+</dl>
+<!-- { { end }} -->
+{{/* <!-- TODO replace all none letter characters with their HTML ascii codes --> */}}

@@ -1,0 +1,98 @@
+<div class="toggle-tabs">
+    <!-- Tab links -->
+    <div class="tab">
+      <!-- Use the "id" below to open a specific tab by default -->
+      <!-- <button class="tablinks" onclick="openCity(event, 'London')" id="defaultOpen">London</button> -->
+  
+      <button class="tablinks" onclick="openCity(event, 'London')" id="defaultOpen">Related</button>
+      <button class="tablinks" onclick="openCity(event, 'Paris')">Details</button>
+      <button class="tablinks" onclick="openCity(event, 'Tokyo')">Author</button>
+    </div>
+  
+    <!-- Tab content -->
+    <div id="London" class="tabcontent">
+      <span onclick="this.parentElement.style.display='none'" class="topright"
+        >&times</span
+      >
+  
+      <h5>London</h5>
+      <p>London is the capital city of England.</p>
+      {{ partial "post/related-posts-slider-tab.html" . }}
+    </div>
+  
+    <div id="Paris" class="tabcontent">
+      <span onclick="this.parentElement.style.display='none'" class="topright"
+        >&times</span
+      >
+  
+      <h5>Paris</h5>
+      <p>Paris is the capital of France.</p>
+      {{ partial "post/tab-post-details.html" . }}
+    </div>
+  
+    <div id="Tokyo" class="tabcontent">
+      <span onclick="this.parentElement.style.display='none'" class="topright"
+        >&times</span
+      >
+  
+      <h5>Tokyo</h5>
+      <p>Tokyo is the capital of Japan.</p>
+    {{ partial "post/author-profile.html" . }}
+    </div>
+  </div>
+  
+  <!-- Script: Toggle Tabs -->
+  <script>
+    function openCity(evt, cityName) {
+      // Declare all variables
+      var i, tabcontent, tablinks;
+  
+      // Get all elements with class="tabcontent" and hide them
+      tabcontent = document.getElementsByClassName("tabcontent");
+      for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+      }
+  
+      // Get all elements with class="tablinks" and remove the class "active"
+      tablinks = document.getElementsByClassName("tablinks");
+      for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+      }
+  
+      // Show the current tab, and add an "active" class to the button that opened the tab
+      document.getElementById(cityName).style.display = "block";
+      evt.currentTarget.className += " active";
+    }
+  
+    // Get the element with id="defaultOpen" and click on it to close tab
+    document.getElementById("defaultOpen").click();
+  </script>
+  
+  <script>
+    const swiperR = new Swiper('.swiper-container-related-tab', {
+        // Optional parameters
+        direction: 'horizontal',
+        loop: true,
+
+        // slidesPerView: 2,
+    //   spaceBetween: 20,
+    //   centeredSlides: true,
+    // TODO Add responsive breakpoints that show 3 at a time on laptop starting with a middle slide
+      
+        // If we need pagination
+        pagination: {
+          el: '.swiper-pagination',
+        },
+      
+        // Navigation arrows
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+      
+        // And if we need scrollbar
+        scrollbar: {
+          el: '.swiper-scrollbar',
+        },
+      });
+      </script>

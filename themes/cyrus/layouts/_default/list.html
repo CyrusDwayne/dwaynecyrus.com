@@ -1,0 +1,81 @@
+{{ define "local-styles" }}
+{{ end }}
+
+
+
+
+{{ define "header-local" }}
+    {{ partial "post/title.html" . }}
+    {{ partial "post/subtitle.html" . }}
+    {{ partial "post/summary" . }}
+    {{ partial "local/carousel-feature-posts.html" . }}
+{{ end }}
+
+
+
+{{ define "aside-left-local" }}
+{{ end }}
+
+
+
+
+{{ define "aside-left-global" }}
+{{ end }}
+
+
+
+
+{{ define "main-local" }}
+{{/* <!-- Add { { range where .Paginator.Pages "Params.hidden" "ne" "true" }} and the matching frontmatter --> */}}
+
+{{ .Content }}
+	<h3>Featured Posts (main section)</h3>
+	<ul>
+		{{ range first 3 (where (where .Site.RegularPages "Type" "in" site.Params.mainSections) ".Params.feature" "!=" false) }}
+		  <li>
+        <a href="{{ .Permalink }}">{{ .Title }}</a>
+		  </li>
+	  {{ end }}
+	</ul>
+
+<hr>
+
+    <ol>
+        {{ range last 3 (where .Pages.ByPublishDate.Reverse ".Params.feature" "=" true) }}
+        <li>
+            <a href="{{ .Permalink }}">{{ .Title }}</a>
+        </li>
+        {{ end }}
+    </ol>
+
+    <hr>
+
+    
+
+<hr>
+<h3>Latest Posts</h3>
+<ol>
+    {{ range last 3 .Pages.ByPublishDate.Reverse }}
+    <li>
+        <a href="{{ .Permalink }}">{{ .Title }}</a>
+    </li>
+    {{ end }}
+</ol>
+<hr>
+<h3>Paginated Blog Posts</h3>
+<ol>
+    {{ $paginator := .Paginate (.Pages.ByPublishDate.Reverse) 20 }}
+    {{ range $paginator.Pages.ByPublishDate.Reverse }}
+    <li>
+    <a href="{{ .Permalink }}">{{ .Title }}</a>
+    </li>
+    {{ end }}
+</ol>
+{{ end }}
+
+
+
+
+{{ define "footer-local" }}
+    {{ template "_internal/pagination.html" . }}
+{{ end }}

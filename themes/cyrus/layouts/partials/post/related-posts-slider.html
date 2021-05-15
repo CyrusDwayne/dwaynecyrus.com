@@ -1,0 +1,81 @@
+<h4>Related Content Slider</h4>
+
+<!-- Slider. main container -->
+<div class="swiper-container swiper-container-related">
+    <!-- Additional required wrapper -->
+    <div class="swiper-wrapper">
+      <!-- Slides -->
+      <!-- <div class="swiper-slide">Slide 1</div>
+      <div class="swiper-slide">Slide 2</div>
+      <div class="swiper-slide">Slide 3</div> -->
+      {{ $related := (where (.Site.RegularPages.RelatedIndices . "tags" "date" ) "Type" "in" (slice "articles" "examples")) | first 3 }}
+
+      {{ range $related }}
+
+      <li class="swiper-slide">
+
+      {{ .Render "li"}}
+      {{ partial "post/key-image-hero.html" . }}
+      </li>
+      {{ end }}
+    </div>
+    <!-- If we need pagination -->
+    <div class="swiper-pagination"></div>
+  
+    <!-- If we need navigation buttons -->
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+  
+    <!-- If we need scrollbar -->
+    <div class="swiper-scrollbar"></div>
+  </div>
+
+  <style>
+    .swiper-container-related {
+      /* width: 600px;
+      width: 100%;
+      height: 300px; */
+    
+      /* Ratio Test */
+      position: relative;
+    padding-bottom: 24.86%; /* 16:9, for an aspect ratio of 1:1 change to this value to 100% */ 
+    background-color: pink;
+    border: 2px red solid;
+    }
+    .swiper-wrapper {
+        position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    }
+    </style>
+
+<script>
+    const swiper = new Swiper('.swiper-container-related', {
+        // Optional parameters
+        direction: 'horizontal',
+        loop: true,
+
+        // slidesPerView: 2,
+    //   spaceBetween: 20,
+    //   centeredSlides: true,
+    // TODO Add responsive breakpoints that show 3 at a time on laptop starting with a middle slide
+      
+        // If we need pagination
+        pagination: {
+          el: '.swiper-pagination',
+        },
+      
+        // Navigation arrows
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+      
+        // And if we need scrollbar
+        scrollbar: {
+          el: '.swiper-scrollbar',
+        },
+      });
+      </script>

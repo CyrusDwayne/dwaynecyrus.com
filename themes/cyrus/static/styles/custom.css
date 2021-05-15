@@ -1,0 +1,97 @@
+#body__notification-bar {
+    display: none;
+  }
+  #body__navigation {
+    display: none;
+  }
+  
+
+html {
+    font-size: 19px;
+}
+body {
+    font-family: atten-new, sans-serif;
+    background-color: #FFE2BC;
+    background-color: #FDE8CD;
+    /* background-color: white; */
+}
+main {
+    height: 100%;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: museo, serif;
+    max-width: 592px;
+}
+p {
+    max-width: 592px;
+    margin: 0.75rem 0;
+    
+}
+button {
+    /* height: 100%; */
+    margin: 1rem;
+    color: #FFE2BC;
+    font-family: museo, serif;
+    font-weight: 700;
+    background-color: #262424;
+    -webkit-box-shadow: 5px 5px 28px 2px rgba(38,36,36,0.55); 
+box-shadow: 2px 4px 16px 0px rgba(38,36,36,0.40);
+}
+
+button:hover, input[type="submit"]:hover, input[type="button"]:hover {
+    color: #FAFAFA;
+    background-color: orangered;
+    background-color: #F78D3F;
+}
+
+.undergoing-construction {
+    position: relative;
+    display: flex;
+    /* display: none; */
+    /* justify-content: center; */
+    align-items: center;
+    /* width: 320px; */
+    height: 100%;
+    /* background-color: lightblue; */
+}
+.undergoing-construction > div {
+    /* position: absolute; */
+    width: 100%;
+    padding: 1.25rem 0;
+    margin: auto;
+    /* background-color: pink; */
+}
+.undergoing-construction > div > h1 {
+    margin: auto;
+/* max-width: initial; */
+    padding: 0.9rem 0 0.75rem;
+    color: #FFE2BC;
+    font-size: 1.85rem;
+    font-weight: 900;
+    text-align: center;
+    text-transform: uppercase;
+    background-color: #262424;
+}
+.undergoing-construction > div > h3 {
+    margin-top: 2rem;
+    margin-left: auto;
+margin-right: auto;
+}
+.undergoing-construction > div > p {
+    /* margin-top: 2rem; */
+    margin-left: auto;
+margin-right: auto;
+font-size: 21px;
+}
+.undergoing-construction > div > button {
+    display: block;
+    margin-top: 2rem;
+    margin-left: auto;
+margin-right: auto;
+}
+.undergoing-construction > div > button.modal-button {
+    display: block;
+    margin-top: 2rem;
+    margin-left: auto;
+margin-right: auto;
+}

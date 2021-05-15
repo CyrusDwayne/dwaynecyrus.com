@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="{{ $.Site.LanguageCode | default " en" }}">
+
+    <head>
+        {{ partial "global/meta.html" . }}
+        {{ partial "global/styles.html" . }}
+        {{ block "styles-local" . }}{{ end }}
+    </head>
+      
+    <body id="body">        
+        {{ partial "global/notification-message.html" . }}
+
+        <div id="body__navigation">
+        {{ partial "navigation/action-menu" . }}
+        {{ partial "navigation/main-menu" . }}
+        {{ partial "navigation/local-menu" . }}
+        {{ partial "navigation/network-menu" . }}
+        {{ partial "navigation/global-menu" .}}
+        {{ partial "navigation/lazy-menu.html" . }}
+        </div>
+
+        <div id="body__content">
+
+            <header id="header">
+                <div class="header__global">
+                    
+                </div>
+                {{ partial "global/alert-banner.html" . }}
+                <div class="header__local">
+                    {{ block "header-local" . }}{{ end }}
+                </div>
+            </header>
+
+            <section>
+
+                <aside id="aside-left">
+                    {{ block "aside-left-global" . }}{{ end }}
+                    <div class="stickybit-aside-left">
+                        {{ block "aside-left-local" . }}
+                            <div class="js-toc"></div>
+                        {{ end }}
+                    </div>
+                </aside>
+
+                <main id="main">
+                    {{ block "main-local" . }}{{ end }}
+                </main>
+
+                <aside id="aside-right ">
+                    {{ block "aside-right-global" . }}{{ end }}
+                    <div id="stickybit-aside-right">
+                        {{ block "aside-right-local" . }}
+                            <div class="js-toc"></div>
+                        {{ end }}
+                    </div>
+                </aside>
+
+            </section>
+
+            <footer id="footer">
+                <div class="footer__local">
+                    {{ block "footer-local" . }}{{ end }}
+                    {{ block "footer-next" . }}
+                    <div class="footer__next-up">
+                        <p>Up Next</p>
+                        <h2>A Title and link Go Here</h2>
+                    </div>
+                    {{ end }}
+                </div>
+                <div class="global-footer">
+                    {{ block "footer-global" . }}{{ end }}
+                </div>
+            </footer>
+        </div>
+
+        {{ partial "global/scripts.html" . }}
+        {{ block "scripts-local" .}}{{ end }}
+
+    </body>
+</html>

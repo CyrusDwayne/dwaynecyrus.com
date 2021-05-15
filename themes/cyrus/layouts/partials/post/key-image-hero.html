@@ -1,0 +1,19 @@
+{{ if .Params.keyImageHero }}
+<figure>
+  <div>
+    <img
+      src="{{ .Params.key_image_hero }}"
+      alt="image from {{ if .Params.project_name }}{{- .Params.project_name -}}{{ else }}{{- .Params.key_image_altT -}}{{ end }}"
+    />
+  </div>
+    <figcaption>
+      {{ if .Params.project_name }}
+      <h4>{{ .Params.project_name }}</h4> {{ else }} <h4>{{ .Params.key_image_hero }}</h4>
+      {{ end }}
+      <!-- TODO On hover effect show the subtitle or caption text for portfolio work -->
+    </figcaption>
+  </figure>
+  {{ end }}
+
+  <!--  TODO Update this for captions on post images
+    https://sebastiandedeyne.com/captioned-images-with-markdown-render-hooks-in-hugo/ -->

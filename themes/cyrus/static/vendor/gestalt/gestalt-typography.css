@@ -1,0 +1,720 @@
+/* TODO Add an examples using the address tag */
+
+/*
+HTML & Body
+===========
+*/
+html {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  /* But does the stuff below really work? */
+
+  font-synthesis: none;
+  -moz-font-feature-settings: "kern";
+  -moz-osx-font-smoothing: grayscale;
+  direction: ltr;
+  text-align: left;
+  /* NOTE Below adds anti-alising, clears up the type for readibility */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  text-shadow: rgba(0, 0, 0, 0.01) 0 0 1px;
+  quotes: "“" "”";
+}
+body {
+  letter-spacing: ;
+  /* letter-spacing: -.022em; */
+  /* line-height: 1.47059; */
+  color: black;
+}
+
+/*
+Headers
+=======
+*/
+h1.hidden_page_title {
+    position: absolute;
+    clip: rect(1px, 1px, 1px, 1px);
+    -webkit-clip-path: inset(0px 0px 99.9% 99.9%);
+    clip-path: inset(0px 0px 99.9% 99.9%);
+    overflow: hidden;
+    height: 1px;
+    width: 1px;
+    padding: 0;
+    border: 0;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  /* font-family: var(--font-serif); */
+  font-weight: 700;
+  line-height: 1.2;
+  max-width: 540px;
+  /* margin: 0 1.25rem 0.75rem 1.25rem; */
+  padding: 0rem 1.25rem 0rem 1.25rem;
+  margin: 3.5rem 0 1rem 0;
+}
+h1 {
+  font-size: 2.25rem;
+  /* font-size: 64px; */
+  /* font-size: var(--font-size-6); */
+  padding: 0rem 1.25rem 0rem 1.25rem;
+  margin: 1rem 0;
+}
+h2 {
+  font-size: 1.9rem;
+  /* font-size: var(--font-size-5); */
+}
+h3 {
+  font-size: 1.7rem;
+  /* font-size: 23px; */
+}
+h4 {
+  font-size: 1.45rem;
+}
+h5 {
+  /* font-size: 1.125rem; */
+  font-size: 1.2rem;
+  /* font-size: 1rem; */
+  /* font-size: 1.0625rem; */
+  /* margin-bottom: 0.25rem; */
+}
+h6 {
+  /* font-size: 0.9175rem; */
+  font-size: 1.12rem;
+  font-size: 1.07rem
+  /* margin-bottom: 0.25rem; */
+}
+
+/*
+Paragraphs
+==========
+*/
+/* NOTE copy 512-618px max width */
+p {
+    padding: 0 1.25rem;
+    margin: 1.25rem 0;
+  }
+  /* Bolds text for emphasis without importance */
+  b {
+    font-weight: bold;
+  }
+  /* Bolds text for emphasis with importance */
+  strong {
+    font-weight: bold;
+  }
+  /* Italic text for emphasis of seperating from surrounding text */
+  em {
+    font-weight: italic;
+  }
+  small {
+    font-size: 0.85rem;
+    font-size: 0.875rem;
+  }
+  /* Text which is marked or highlighted for reference or notation purposes */
+mark {
+    /* border-radius: 2px; */
+    padding: 0 2px;
+    background: lightcoral;
+    background-color: yellow;
+    color: black;
+  }
+  sup {
+}
+sub {
+}
+cite {
+}
+  /* Cursor selection highlighting */
+::selection {
+    /* color: white; */
+    background: pink;
+  }
+
+/*
+Links & Buttons
+===============
+*/
+a {
+    text-decoration: none;
+    color: royalblue;
+    /* color: deepskyblue; */
+    text-decoration: underline;
+  cursor: pointer;
+  }
+  a:link {
+  }
+a:visited {
+  /* color: rgba(71, 153, 226, 1.0); */
+  color: rebeccapurple;
+  
+  border-bottom: 2px solid transparent;
+}
+  a:hover {
+    text-decoration: underline;
+    color: orangered;
+    /* border-bottom: 2px solid rgba(34, 40, 49, 1.0); */
+  }
+a:active {
+  color: rgba(71, 153, 226, 1.0);
+  /* color: rebeccapurple; */
+  color: orange;
+  /* border-bottom: 2px solid rgba(34, 40, 49, 1.0); */
+}
+button, .button {
+    cursor: pointer;
+    /* background-color: lightgray; */
+    background-color: white;
+    /* background-color: deepskyblue; */
+    /* padding: 0.85em 0.95em; */
+    margin: 0 1.25rem;
+    border: 4px black solid;
+}
+.button {
+    /* display: inline-block; */
+    cursor: pointer;
+    color: black;
+    text-decoration: none;
+
+    color: #000;
+    /* color: var(--form-text); */
+    background-color: #efefef;
+    /* background-color: #161f27; */
+    font-family: inherit;
+    font-size: inherit;
+    margin-right: 6px;
+    margin-bottom: 6px;
+    padding: 10px;
+    padding: 12.5px; /* Needs to be this to match the height of an actual button element */
+    border: none;
+    border-radius: 6px;
+    outline: none;
+    -webkit-appearance: none;
+    padding-right: 30px;
+    padding-left: 30px;
+}
+.button:visited {
+    color: black;
+    background: #dddddd;
+}
+.button:focus {
+  box-shadow: 0 0 0 2px #0096bfab;
+}
+.button:active {
+  transform: translateY(2px);
+}
+
+.button a {
+    text-decoration: none;
+}
+
+button:hover, .button:hover {
+    /* background-color: orange; */
+    /* background-color: lightgrey; */
+    /* border: 4px orange solid; */
+}
+button:active, .button:active {
+    background-color: white;
+    /* background-color: orangered; */
+}
+button:focus, .button:active {
+    /* background-color: deepskyblue; */
+    outline: none;
+}
+
+  /*
+  Lists
+  =====
+  */
+  dl {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+    max-width: 540px;
+    margin: 0 0 1.25rem 0;
+  }
+  dt {
+    font-weight: bold;
+    margin: 0 0 0.25rem 0;
+  }
+  dd {
+    font-size: 0.9375rem;
+    margin: 0 0 0.5rem 1.5rem;
+  }
+  ol,
+  ul {
+    max-width: 540px;
+    padding: 0 0 0 1.5rem;
+    margin: 0 0 1.25rem 0;
+  }
+  ol li,
+  ul li {
+    /* margin: 0 0 0.6rem 0; */
+  }
+  ol,
+  ul {
+    list-style-type: revert;
+    padding-left: 2.5rem;
+    padding-right: 1.25rem;
+  }
+  ol li,
+  ul li {
+    /* margin: 0 0 0.25rem 0; */
+    padding: 0 0 0 0.25rem;
+  }
+  ol li > p:first-of-type,
+  ul li > p:first-of-type {
+    margin: 0 0 0.25rem 0;
+    padding: 0;
+  }
+  ol li ol,
+  ol li ul,
+  ul li ol,
+  ul li ul {
+    list-style-type: revert;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+    margin: 0.25rem 0;
+  }
+
+/*
+Quote & Blockquote
+==================
+*/
+q {
+  /* TODO Test Does this even work? */
+  hanging-punctuation: first;
+  text-indent: -0.5em;
+  font-style: italic;
+  font-weight: inherit;
+}
+/*
+* Inserts the quotes using pseudo-elements and the `content` property
+*/
+q:before {
+  content: open-quote;
+  /* font-family: atten-new; */
+}
+q:after {
+  content: close-quote;
+  /* font-family: atten-new; */
+}
+blockquote {
+  /* font-size: 1rem; */
+  /* font-style: italic; */
+  max-width: 540px;
+  /* border-left: 4px solid #e2e8f0;; */
+  /* margin: 1.5rem 0; */
+  padding: 0rem 1.25rem;
+  padding: 0.5rem 0.5rem 0.75rem 0;
+  margin: 2.5rem 1.25rem 2.5rem 1.25rem;
+  /* background-color: lightgray; */
+  /* background-color: color: rgba(34, 40, 49, 1.0); */
+  border-left: 8px solid black;
+}
+blockquote > blockquote {
+    margin: 0.5rem 0.75rem 0.5rem 1.25rem;
+    /* background-color: aquamarine; */
+  }
+blockquote p {
+  /* border-left: 4px solid #e2e8f0;
+     */
+  /* border-left: 4px solid black; */
+  font-style: inherit;
+  padding: 0 0.75rem;
+  padding: 0.75em;
+  margin: 0;
+}
+blockquote ul,
+blockquote ol {
+  font-style: inherit;
+  padding: 0 0.75rem;
+  padding: 0.75em;
+  /* margin: 0 */
+}
+blockquote h3,
+blockquote h4,
+blockquote h5,
+blockquote h6 {
+  margin: 1rem 1.25rem 1rem 1.25rem;
+  margin: 1rem 0.75rem 1rem 0.75rem;
+}
+blockquote figcaption {
+  padding: 0 0.75rem;
+  /* text-align: left; */
+  /* font-size: 0.9375em;
+    font-size: 0.875em;
+    font-style: normal; */
+  border: 0;
+}
+blockquote a {
+    display: block;
+  margin-top: 1rem;
+  text-align: right;
+  padding: 0.5rem 0.75rem;
+}
+
+/*
+Code
+====
+*/
+pre,
+code,
+kbd,
+samp {
+  font-family: monospace;
+}
+code,
+kbd {
+  background: #efefef;
+  color: #000000;
+  padding: 5px;
+  border-radius: 6px;
+}
+pre > code {
+  padding: 10px;
+  display: block;
+  overflow-x: auto;
+  /* display: block; */
+  padding: 1em 1em;
+  white-space: pre;
+  font-size: 0.875rem;
+  line-height: 2;
+}
+var {
+}
+kbd {
+  background: burlywood;
+  border: 1px solid 4px;
+  border-radius: 2px;
+  color: black;
+  padding: 2px 4px 2px 4px;
+}
+pre,
+.highlight > pre {
+  padding: 0.5rem 1.25rem 0.75rem 1.25rem;
+  /* margin: 1.25rem; */
+  /* padding: 0; */
+  /* margin: 0; */
+  overflow-x: auto;
+  overflow-y: hidden;
+  /* overflow: scroll; */
+
+  /* NOTE Using important to override the browser styles being written inline due to syntax highlighting */
+  color: inherit !important;
+background-color: transparent !important;
+  /* background-color: #222; */
+  /* color: #ddd; */
+  white-space: pre;
+
+  hyphens: none;
+  /* position: relative; */
+}
+
+/*
+Footnotes
+=========
+*/
+.footnotes hr {
+    margin: 4rem 1.25rem 1rem;
+  }
+  .footnotes ol,
+  .footnotes p {
+    font-size: 0.875rem;
+  }
+
+/*
+Horizontal Rule
+===============
+*/
+  hr {
+    margin: 6rem 20px; /* @ desktop */
+    /* margin: var(--divider-spacing); */
+  }
+
+/*
+Table
+=====
+*/
+/**
+    1. Block ictates the width of the table, but when it is on margin right doesn't apply 
+*/
+  table {
+    border-collapse: collapse;
+
+    width: 100%;
+    table-layout: fixed;
+
+
+    margin: 1.25rem;
+
+    display: block;
+
+    overflow-x: auto;
+  }
+  
+  td, th {
+    padding: 6px;
+    text-align: left;
+  }
+  
+  th {
+    border-bottom: 1px solid #dbdbdb;
+  }
+
+  th {
+      /* Maybe use... */
+    font-weight: bold;
+  }
+  tbody tr:nth-child(even) {
+    background-color: #efefef;
+  }
+
+/*
+Strikeout & Redacted
+====================
+*/
+/* TODO Figure out how to have just a regular strike through and then a redacted strikethrough */
+del {
+    background-color: black;
+    color: transparent;
+    -webkit-touch-callout: none;
+    /* iOS Safari */
+    -webkit-user-select: none;
+    /* Safari */
+    -khtml-user-select: none;
+    /* Konqueror HTML */
+    -moz-user-select: none;
+    /* Old versions of Firefox */
+    -ms-user-select: none;
+    /* Internet Explorer/Edge */
+    user-select: none;
+    /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
+  }
+  /* NOTE The commented out is for a redacted effect that you can and should turn into a shortcode */
+  /* del,
+    .redacted span {
+         position: relative;
+         white-space: pre;
+       }
+    del:after,
+       .redacted span:after {
+         background: black;
+         border-radius: 0.1em;
+         box-shadow: 0 0 1px rgba(0, 0, 0, 0.35);
+         content: " ";
+         width: 100%;
+         height: 1.2em;
+         left: 0;
+         position: absolute;
+         transform: skewY(-5deg) rotate(5deg);
+         color: transparent;
+       } */
+  
+/*
+Task List
+=========
+*/
+.task-list{
+    margin: 1.75rem 0;
+}
+.task-list ul {
+    list-style-type: none;
+    margin-bottom: 0;
+}
+.task-list h6 {
+    margin: 1rem 1.25rem;
+}
+
+/*
+Details
+=======
+*/
+details {
+    /* NOTE Why the flexbox? Is it for animation?
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start; */
+    padding: 14px 16px;
+    /* top right/left bottom
+    margin: 0 0 1rem 0; */
+    margin: 1.25rem;
+    background-color: #f1f1f1 ;
+    /* border-radius: 8px; */
+    border: 1px solid #ccc;
+    overflow: hidden;
+  }
+  details[open] {
+    /* padding: 0.75rem 0.75rem 0; */
+  }
+  details h5 {
+    margin-top: 1rem; 
+}
+  /* NOTE Removes the default arrow */
+  /* details > summary:first-of-type {
+        list-style-type: none;
+    } */
+
+/*
+Misc.
+=====
+*/
+.noselect {
+    -webkit-touch-callout: none;
+    /* iOS Safari */
+  -webkit-user-select: none;
+  /* Safari */
+  -khtml-user-select: none;
+  /* Konqueror HTML */
+  -moz-user-select: none;
+  /* Old versions of Firefox */
+  -ms-user-select: none;
+  /* Internet Explorer/Edge */
+  user-select: none;
+  /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
+}
+
+/*
+Inputs
+==========
+*/
+fieldset {
+  padding: 0.75rem 1rem 1rem;
+border-width: 1px;
+margin: 1.25rem;
+}
+legend {
+  font-weight: bold;
+padding: 0 0.5rem;
+}
+label {
+  vertical-align: middle;
+  margin-bottom: 0.25rem;
+  display: inline-block;
+}
+
+
+address {
+  font-style: normal;
+}
+
+a[href^='mailto']::before {
+  /* content: '📧 '; */
+}
+
+a[href^='tel']::before {
+  /* content: '📞 '; */
+}
+
+a[href^='sms']::before {
+  /* content: '💬 '; */
+}
+
+button,
+input[type='submit'],
+input[type='button'],
+input[type='checkbox'] {
+  cursor: pointer;
+}
+
+input:not([type="checkbox"]):not([type="radio"]), select {
+  display: block;
+}
+
+input, select, button, textarea {
+  color: #000;
+/* color: var(--form-text); */
+background-color: #efefef;
+/* background-color: #161f27; */
+font-family: inherit;
+font-size: inherit;
+margin-right: 6px;
+margin-bottom: 6px;
+padding: 10px;
+border: none;
+border-radius: 6px;
+outline: none;
+}
+
+input:not([type='checkbox']):not([type='radio']),
+select, button, textarea {
+  -webkit-appearance: none;
+}
+
+/**
+    1. Forces the text area to only expand downwards
+*/
+textarea {
+  margin-right: 0;
+  width: 100%;
+  box-sizing: border-box;
+  resize: vertical; /* 1 */
+}
+
+button, input:not([type="checkbox"]):not([type="radio"]), input[type="range"], select, textarea {
+  -webkit-appearance: none;
+}
+
+button, input[type='submit'], input[type='button'] {
+  padding-right: 30px;
+  padding-left: 30px;
+}
+
+button:hover,
+input[type='submit']:hover,
+input[type='button']:hover {
+  background: #dddddd;
+}
+
+input:focus,
+select:focus,
+button:focus,
+textarea:focus {
+  box-shadow: 0 0 0 2px #0096bfab;
+}
+
+input[type='checkbox']:active,
+input[type='radio']:active,
+input[type='submit']:active,
+input[type='button']:active,
+button:active {
+  transform: translateY(2px);
+}
+
+input:disabled,
+select:disabled,
+button:disabled,
+textarea:disabled {
+  cursor: not-allowed;
+  opacity: .5;
+}
+
+::-webkit-input-placeholder {
+  color: #949494;
+}
+
+:-ms-input-placeholder {
+  color: #949494;
+}
+
+::-ms-input-placeholder {
+  color: #949494;
+}
+
+::placeholder {
+  color: #949494;
+}
+
+
+
+
+
+input {
+  transition: background-color .1s linear,border-color .1s linear,color .1s linear,box-shadow .1s linear,transform .1s ease;
+  transition: background-color 0.1s linear,border-color 0.1s linear,color 0.1s linear,box-shadow 0.1s linear,transform 0.1s ease;
+}

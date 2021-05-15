@@ -1,0 +1,256 @@
+<!-- Trigger Button -->
+<!-- <div class="modal-button-wrap"> -->
+  <button type="button" id="popup" class="modal-button jsModalTrigger" href="#jsModal">
+    Join the Familia<span></span>
+  </button>
+<!-- </div> -->
+
+<div id="jsModal" class="modal">
+  <div class="modal__overlay jsOverlay"></div>
+  <div class="modal__container">
+    <h6>Welcome to the Familia</h6>
+    <button class="modal__close jsModalClose">&#10005;</button>
+
+    {{ partial "form/subscribe.html" . }}
+
+  </div>
+</div>
+<!-- <hr /> -->
+
+<style>
+  .modal-button-wrap {
+    /* display: flex; */
+    /* justify-content: flex-end; */
+  }
+  .modal-button {
+    /* border-radius: 4px;
+    border: solid black 4px;
+    padding: 0.5em 0.8em;
+    font-size: 15px;
+    font-weight: 900;
+    margin-right: 20px;
+    margin-left: 20px;
+    display: inline-block;
+    background-color: black;
+    color: white; */
+  }
+</style>
+
+<!-- Modal Specific -->
+<style>
+  .modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 20;
+
+    display: none;
+justify-content: center;
+align-items: center;
+
+    /* padding: 30px; */
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    opacity: 0;
+    /* opacity: 1; */
+    visibility: hidden;
+    transition: visibility 0s linear 0.1s, opacity 0.3s ease;
+    /* background-color: red; */
+  }
+  .modal.open {
+    display: flex;
+    visibility: visible;
+    opacity: 1;
+    transition-delay: 0s;
+  }
+  .modal__overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 21;
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+  .modal__close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 24px;
+    color: #747474;
+    font-weight: bold;
+  }
+  .modal__close:hover {
+    color: #000;
+  }
+  .modal__container {
+    position: relative;
+    z-index: 22;
+    width: 100%;
+    height: 200px;
+    max-width: 600px;
+    /* top: 50%; */
+    /* transform: translateY(-50%); */
+    box-shadow: 0 0 10px #000;
+    margin: 0 12px;
+    background-color: #fff;
+    /* text-align: center; */
+    width: auto;
+    margin: 0 12px;
+    height: auto;
+    padding: 20px 0;
+  }
+</style>
+
+<style>
+  .modal__container {
+    margin: 1rem;
+    /* padding: 0.5rem; */
+    padding: 1.25rem 1rem;
+}
+.modal__container h3, 
+.modal__container h4,
+.modal__container h5, 
+.modal__container h6 {
+  text-align: center;
+  padding: 0;
+    margin: 1rem 0;
+}
+.modal__container p {
+  padding: 0;
+  /* padding: 0 0.75rem; */
+    /* margin: 1rem 0; */
+}
+.modal__close {
+    padding: 0;
+    margin: 0;
+    top: 8px;
+    right: 16px;
+    top: -4px !important;
+    right: -4px !important;
+    padding: 8px 16px;
+    padding: 2px 10px;
+    border: transparent 4px solid !important;
+    color: black;
+}
+
+</style>
+
+
+
+<!-- Form Specific Styles -->
+<style>
+.formkit-field-tags-check {
+  display: none;
+}
+.formkit-field input {
+  width: 100%;
+  /* padding: 0 0.75rem;
+   */
+   /* padding: 0; */
+}
+
+.formkit-submit {
+  width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+}
+.subscribe-note {
+  /* margin: 0;  */
+  line-height: 1.25;
+}
+.modal__close {
+  box-shadow: none;
+  background-color: transparent;
+}
+.modal__close:hover {
+  box-shadow: none;
+  background-color: transparent;
+}
+</style>
+
+
+
+<!-- Modal Specific Scripts -->
+<script>
+  /* This script supports IE9+ */
+  (function () {
+    /* Opening modal window function */
+    function openModal() {
+      /* Get trigger element */
+      var modalTrigger = document.getElementsByClassName("jsModalTrigger");
+
+      /* Set onclick event handler for all trigger elements */
+      for (var i = 0; i < modalTrigger.length; i++) {
+        modalTrigger[i].onclick = function () {
+          var target = this.getAttribute("href").substr(1);
+          var modalWindow = document.getElementById(target);
+
+          modalWindow.classList
+            ? modalWindow.classList.add("open")
+            : (modalWindow.className += " " + "open");
+        };
+      }
+    }
+
+    function closeModal() {
+      /* Get close button */
+      var closeButton = document.getElementsByClassName("jsModalClose");
+      var closeOverlay = document.getElementsByClassName("jsOverlay");
+
+      /* Set onclick event handler for close buttons */
+      for (var i = 0; i < closeButton.length; i++) {
+        closeButton[i].onclick = function () {
+          var modalWindow = this.parentNode.parentNode;
+
+          modalWindow.classList
+            ? modalWindow.classList.remove("open")
+            : (modalWindow.className = modalWindow.className.replace(
+                new RegExp(
+                  "(^|\\b)" + "open".split(" ").join("|") + "(\\b|$)",
+                  "gi"
+                ),
+                " "
+              ));
+        };
+      }
+
+      /* Set onclick event handler for modal overlay */
+      for (var i = 0; i < closeOverlay.length; i++) {
+        closeOverlay[i].onclick = function () {
+          var modalWindow = this.parentNode;
+
+          modalWindow.classList
+            ? modalWindow.classList.remove("open")
+            : (modalWindow.className = modalWindow.className.replace(
+                new RegExp(
+                  "(^|\\b)" + "open".split(" ").join("|") + "(\\b|$)",
+                  "gi"
+                ),
+                " "
+              ));
+        };
+      }
+    }
+
+    /* Handling domready event IE9+ */
+    function ready(fn) {
+      if (document.readyState != "loading") {
+        fn();
+      } else {
+        document.addEventListener("DOMContentLoaded", fn);
+      }
+    }
+
+    /* Triggering modal window function after dom ready */
+    ready(openModal);
+    ready(closeModal);
+  })();
+</script>

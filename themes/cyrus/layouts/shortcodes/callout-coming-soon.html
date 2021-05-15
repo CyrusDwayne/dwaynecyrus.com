@@ -1,0 +1,18 @@
+
+<blockquote class="callout coming-soon">
+  <!-- TODO Decide on an icon for this -->
+<h6>Coming Soon: I might be stuck...</h6> 
+<p>Feel free to give me
+
+<a 
+class="share-on-twitter link-reverse" target="_blank" href="https://twitter.com/intent/tweet?original_referer={{ .Page.Permalink }}&ref_src=twsrc%5Etfw&text={{- .Inner -}}
+
+
+Hey @CyrusDwayne, finish &quot;{{ .Page.Title }}&quot;&nbsp; I need the knowledge! —&nbsp;
+
+{{ if .Get "shortLink" }}https://brian.link/{{ .Get "shortlink" }}{{ else }}{{ .Page.Permalink }}{{ end }}">
+
+a nudge on Twitter</a> to speed up the process.</p>
+
+{{ with .Get "psText" }}<p><strong>PS:</strong> {{ . | markdownify }}</p>{{ end }}
+</blockquote>

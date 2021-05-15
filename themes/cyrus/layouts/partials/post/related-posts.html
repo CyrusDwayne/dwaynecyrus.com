@@ -1,0 +1,11 @@
+
+
+
+  <h4>Related Content</h4>
+<!-- "collections" "categories" "subjects" "topics" "tags" "date" -->
+{{ $related := (where (.Site.RegularPages.RelatedIndices . "tags" "date" ) "Type" "in" (slice "articles" "examples")) | first 3 }}
+{{ range $related }}
+    {{ .Render "li" }} //
+    <!-- <a href="{{ .Permalink }}">{{ .Title }}</a> -->
+
+{{ end }}

@@ -1,0 +1,8 @@
+{{ if .Site.Params.alert_global | default false }}
+
+{{ with .Site.Params.alert_global_text | markdownify }}
+ <div class="notification-message alert-global"><p><strong>Global Alert: </strong>{{ . }}</p></div>
+{{ end }}
+
+{{ end }}
+

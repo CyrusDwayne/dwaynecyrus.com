@@ -1,0 +1,11 @@
+{{ with .Params.subjects }}
+<dl class="topic-name">
+ <dt>Subjects</dt>
+  {{ range . }}
+  <dd>
+    {{ $href := print (absURL "subjects/") (urlize .) }}
+    <a href="{{ $href }}">{{- . -}}</a>
+    </dd>
+  {{ end }}
+  </dl>
+{{ end }}

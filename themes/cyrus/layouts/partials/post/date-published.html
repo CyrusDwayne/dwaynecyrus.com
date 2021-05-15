@@ -1,0 +1,6 @@
+<dl class="date-published">
+    <dt>Published</dt>
+   <dd>{{ $publishDateTime := .PublishDate.Format "2006-01-02" }}{{ $publishDateFormat := .Site.Params.dateFormat | default "Jan 02, 2006" }}<time  datetime="{{ $publishDateTime }}">{{- .PublishDate.Format $publishDateFormat -}}</time></dd>
+   </dl>
+   
+   {{/* <!-- TODO Consider adding the if statement for the modified date --> */}}

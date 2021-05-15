@@ -1,0 +1,33 @@
+{{- if .Params.series -}}
+  <section class="meta-series">
+  {{- $name := index .Params.series 0 -}}
+  {{- $key := $name | urlize }}
+  {{- with (index .Site.Taxonomies.series $key) -}}
+    {{- $total := .Count -}}
+    {{- $startIndex := 0 -}}
+    {{- $prevIndex := 0 -}}
+    {{- $currIndex := 0 -}}
+    {{- $nextIndex := 0 -}}
+    {{- $endIndex := ( sub $total 1 ) -}}
+    {{- range $index, $page := .Pages.Reverse -}}
+      {{- if (eq $page $.Page) -}}
+        {{- $currIndex = $index -}}
+        {{- $prevIndex = (sub $index 1) -}}
+        {{- $nextIndex = (add $index 1) -}}
+        <p>Part {{ add $index 1 }} of {{ $total }} in the
+          <a href="{{ "series" | absURL }}/{{ $key }}">{{ $name }}</a> series.</p>
+      {{ end -}}
+    {{- end -}}
+    {{- if ge $prevIndex $startIndex -}}
+      {{- with (index .Pages.Reverse $prevIndex) -}}
+        <p>(Preceded by <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>)</p>
+      {{- end -}}
+    {{- end -}}
+    {{- if le $nextIndex $endIndex -}}
+      {{- with (index .Pages.Reverse $nextIndex) -}}
+        <p>(Followed by <a href="{{ .RelPermalink }}">{{ .Title }}</a>)</p>
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+  </section>
+{{- end -}}

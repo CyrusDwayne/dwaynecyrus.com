@@ -1,0 +1,137 @@
+/* <!-- TODO When you build your no class, split the css into parts similar to water.css and tachyons // Be sure to release this as a project on it's own seperate from the theme --> */
+/* TODO Be sure to make use of variables too in a future update */
+
+/* Layout Bones */
+html {
+  background-color: black;
+}
+body {
+  background-color: white;
+}
+html, body {
+  height: 100%; /* Sticky Footer: Height for sticky footer */
+  /* BUG The height of the body is not 100% when you inspect so it shorten the background color. A quick fix has been to add background color to "eh". */
+}
+
+body > div:last-of-type {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr auto; /* Sticky Footer: Keep the footer row as auto to remain sticky */
+  min-height: 100%; /* Sticky Footer: Min-height for sticky footer */
+}
+body > div:last-of-type > header {
+  grid-column: 1;
+  grid-row: 1;
+  background-color: white; /* BUG The background color is showing black */
+
+}
+body > div:last-of-type > div {
+  grid-column: 1;
+  grid-row: 2;
+  background-color: white;
+}
+body > div:last-of-type > div > aside:first-of-type {
+  display: none;
+}
+body > div:last-of-type > div > main {
+grid-column: 1;
+}
+body > div:last-of-type > div > aside:last-of-type {
+  display: none;
+}
+body > div:last-of-type > footer {
+  grid-column: 1;
+  grid-row: 3;
+  background-color: white; /* BUG The background color is showing black */
+}
+
+/* TODO Convert the length values to rem or percentages for smooth responsive action */
+@media screen and (min-width: 480px) {
+}
+@media screen and (min-width: 640px) {
+}
+/* IDEA Consider adding the asides with icon expanders at a width of 768px or 800px */
+@media screen and (min-width: 960px) {
+  body > div:last-of-type {
+  }
+  body > div:last-of-type > header {
+    display: grid;
+    grid-template-columns: 80px repeat(12, 1fr) 80px;
+  }
+  body > div:last-of-type > header > div {
+    grid-column: 2 / span 12;
+  }
+
+  body > div:last-of-type > div {
+    display: grid;
+    grid-template-columns: 80px repeat(12, 1fr) 80px;
+  }
+
+  body > div:last-of-type > div > aside:first-of-type {
+    display: block;
+    grid-column: 1 / span 2;
+  }
+  body > div:last-of-type > div > main {
+    grid-column: 3 / span 10;
+  }
+  body > div:last-of-type > div > aside:last-of-type {
+    display: block;
+    grid-column: 13 / span 2;
+  }
+  body > div:last-of-type > footer {
+    display: grid;
+    grid-template-columns: 80px repeat(12, 1fr) 80px;
+  }
+  body > div:last-of-type > footer > div {
+    grid-column: 2 / span 12;
+  }
+}
+
+/* iPad Mini 2019 (5th gen) */
+@media screen and (min-width: 1024px) {
+}
+
+/* iPad 2020 (8th gen) */
+@media screen and (min-width: 1080px) {
+}
+
+/* iPad Air 2020 (4th gen) */
+@media screen and (min-width: 1180px) {
+}
+
+/* iPad Pro 11-inch 2021 (5th gen) */
+@media screen and (min-width: 1194px) {
+}
+
+@media screen and (min-width: 1280px) {
+}
+
+/* iPad Pro 12.9-inch 2021 (5th gen) */
+@media screen and (min-width: 1366px) {
+}
+
+/* Macbook Pro 15-inch 2015-? */
+@media screen and (min-width: 1440px) {
+  body > div:last-of-type > div > aside:first-of-type {
+    grid-column: 1 / span 3;
+  }
+  body > div:last-of-type > div > main {
+    grid-column: 4 / span 8;
+  }
+  body > div:last-of-type > div > aside:last-of-type {
+    display: block;
+    grid-column: 12 / span 3;
+  }
+}
+
+@media screen and (min-width: 1600px) {
+}
+
+@media screen and (min-width: 1920px) {
+}
+
+@media screen and (min-width: 2240px) {
+}
+
+@media screen and (min-width: 2560px) {
+}

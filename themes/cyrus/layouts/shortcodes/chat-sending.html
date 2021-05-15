@@ -1,0 +1,9 @@
+<div class="chat-message {{ with .Get "class" }}{{ . }}{{ end }}">
+    <div class="chat-message__big-d">
+        <figure>
+            <img class="chat-message__profile" src="/image/characters/journal-bunny.png" alt="">
+            <figcaption class="chat-message__name">{{ .Get "name" }}Big D</figcaption>
+        </figure>
+        <p class="chat-message__message">{{ .Inner }}</p>
+    </div>
+</div>

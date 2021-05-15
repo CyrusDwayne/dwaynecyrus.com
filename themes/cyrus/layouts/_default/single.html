@@ -1,0 +1,100 @@
+{{ define "local-styles" }}
+{{ end }}
+
+
+
+
+{{ define "header-local" }}
+
+  {{ partial "post/key-image-hero.html" . }}
+  {{ partial "post/type.html" . }}
+  {{ partial "post/collections.html" . }}
+        
+  {{ partial "post/title.html" . }}
+  {{ partial "post/subtitle.html" . }}
+  {{ partial "post/summary.html" . }}
+
+  {{ partial "post/authors.html" . }}
+  {{ partial "post/date-published.html" . }}
+  {{ partial "post/date-modified.html" . }}
+  {{ partial "post/read-time.html" . }}
+
+  {{ partial "post/categories.html" . }}
+  {{ partial "post/subjects.html" . }}
+  {{ partial "post/topics.html" . }}
+  {{ partial "post/tags.html" . }}
+  {{ partial "post/social-share.html" . }} 
+
+  {{ partial "post/series.html" . }}
+
+  {{/* <!-- TODO Add the comment count somewhere here!!! --> */}}
+{{ end }}
+
+
+
+
+{{ define "aside-left-local" }}
+{{ end }}
+
+
+
+
+{{ define "gaside-left-global" }}
+{{ end }}
+
+
+
+
+{{ define "main-local" }}
+Roar!
+  <article>
+    <header>
+      {{ partial "post/author-note.html" . }}
+      {{ partial "post/toc.html" . }}
+
+    </header>
+
+    <div>
+      {{- .Content -}}
+    </div>
+
+    <footer>
+      {{/* <!-- TODO Hero Image Copyright with artist name and description --> */}}
+      {{ partial "post/social-share.html" . }} 
+      {{/* <!-- TODO Author Box with name, bio, further info links, profile pic (maybe) --> */}}
+      {{ partial "post/series.html" . }}
+    </footer>
+  </article>
+{{ end }}
+
+
+
+
+{{ define "aside-right-local" }}
+{{ end }}
+
+
+
+
+{{ define "aside-right-global" }}
+{{ end }}
+
+
+
+
+{{ define "footer-local" }}
+{{ partial "post/author-profile.html" . }}
+  {{ partial "post/related-posts.html" . }}
+  {{ partial "post/related-posts-slider.html" . }}
+  {{ partial "post/content-details.html" . }}
+  {{ partial "post/tab-toggle.html" . }}
+  {{/* <!-- TODO Comments partial and/ a modal button option --> */}}
+  {{ partial "navigation/prev-next" . }}
+  {{/* {{/* <!-- TODO Consider putting the unique call to action here --> */}}
+{{ end }}
+
+
+
+
+{{ define "scripts-local" }}
+{{ end }}

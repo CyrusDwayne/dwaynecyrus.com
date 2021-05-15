@@ -1,0 +1,37 @@
+
+    <blockquote cite="{{ .Get "citeURL" }}">
+        <figure>
+        <p><q>{{- $.Inner -}}</q></p>
+
+
+        <figcaption><small>— {{ .Get "author" }}, <cite>{{ .Get "cite" }}</cite></small></figcaption>
+        <div>
+        <a 
+        class="share-on-twitter link-reverse" target="_blank" href="https://twitter.com/intent/tweet?original_referer={{ .Page.Permalink }}&ref_src=twsrc%5Etfw&text=&quot;{{- .Inner -}}&quot;&nbsp;{{ if .Get "hashtags" }}{{ range $index, $hashtags := split (.Get "hashtags") ", " }}{{ if gt $index 0 }}{{ htmlUnescape " &#35;" }}{{ else }}{{ htmlUnescape "&#35;" }}{{ end }}{{ . | lower }}{{ end }}%0a%0a{{ end }} {{ if .Get "shortlink" }}https://brian.link/{{ .Get "shortlink" }}{{ else }}{{ .Page.Permalink }}{{ end }} by @CyrusDwayne">Share on Twitter &#8594;
+        </a>
+        </div>
+        </figure>
+
+    </blockquote>
+
+
+<!-- 
+</figure>
+
+
+
+
+<hr>
+
+
+<figure>
+    <blockquote cite="{{ .Get "citeURL" }}">
+        <p><q>{{- $.Inner -}}</q></p>
+    </blockquote>
+<figcaption>— {{ .Get "author" }}, <cite>{{ .Get "cite" }}</cite></figcaption>
+	<br>
+	<a 
+    class="share-on-twitter link-reverse" target="_blank" href="https://twitter.com/intent/tweet?original_referer={{ .Page.Permalink }}&ref_src=twsrc%5Etfw&text=&quot;{{- .Inner -}}&quot;&nbsp;{{ if .Get "hashtags" }}{{ range $index, $hashtags := split (.Get "hashtags") ", " }}{{ if gt $index 0 }}{{ htmlUnescape " &#35;" }}{{ else }}{{ htmlUnescape "&#35;" }}{{ end }}{{ . | lower }}{{ end }}%0a%0a{{ end }} {{ if .Get "shortlink" }}https://brian.link/{{ .Get "shortlink" }}{{ else }}{{ .Page.Permalink }}{{ end }} by @CyrusDwayne">Share on Twitter &#8594;
+	</a>
+
+</figure> -->

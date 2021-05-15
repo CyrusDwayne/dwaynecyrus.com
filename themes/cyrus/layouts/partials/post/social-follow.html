@@ -1,0 +1,298 @@
+<section class="social-icons social-icons-gallery">
+
+  <!-- TODO Figure out if this could be a grobla partial with page specific CSS tweaks and adjustments -->
+  
+  <!-- Reference .....
+  
+    {{ $icon_size := "32px" }}
+  {{ with .Param "stackoverflow" }}
+  <a href="{{ . }}" target="_blank" class="link-transition stackoverflow link dib z-999 pt3 pt0-l mr1" title="Stack Overflow link" rel="noopener" aria-label="follow on Stack Overflow——Opens in a new window">
+    {{ partial "svg/stackoverflow.svg" (dict "size" $icon_size) }}
+    {{- partial "new-window-icon.html" . -}}
+  </a>
+  {{ end }}
+  
+   -->
+
+   <!-- TODO Medium and Skillshare -->
+  
+  <p>Follow on the socials</p>
+  
+  <!-- TODO Place these in dl dd tags -->
+  
+  {{ range .Site.Params.social.follow }}
+  
+  {{ $display := .Display }}
+  {{ $name := print .Name | safeHTML }}
+  {{ $title := print .Title | safeHTML }}
+  {{ $url := print .url | safeHTML }}
+  
+  {{ if eq $display true }}
+  <a href="{{ $url }}" target="_blank" title="{{ $title }}" rel="noopener" aria-label="Follow me on ArtStation —— Opens in a new window">{{ $name }}</a>
+  {{ end }}
+  
+  {{ end }}
+  
+  <ul class="">
+  
+  
+  
+    <!-- 
+      { { if .Site.Params.social.follow.test.display | default false }}
+    <dd>
+      <a href="//twitter.com/share?url={{ .Permalink }}&amp;text={{ .Title }}&amp;via={{ .Site.Social.twitter }}"
+        target="_blank" class="share-btn twitter">Test Share// {{ $name := print .Name }}{{ $name }}</a>
+    </dd> 
+    { { end }}
+  -->
+  
+  
+    {{ with .Param "500px" }}
+    <li>
+  
+      <a href="{{ . }}" target="_blank" class="500px" title="Artstation link" rel="noopener" aria-label="Follow on 500px——Opens in a new window">
+      {{ partial "svg/500px.svg" }}
+      </a>
+    </li>
+    {{ end }}
+  
+    {{ with .Param "artstation" }}
+    <li>
+  
+      <a href="{{ . }}" target="_blank" class="artstation" title="Artstation link" rel="noopener" aria-label="Follow on Artstation——Opens in a new window">
+      {{ partial "svg/artstation.svg" }}
+      </a>
+    </li>
+    {{ end }}
+  
+    {{ with .Param "behance" }}
+    <li>
+  
+      <a href="{{ . }}" target="_blank" class="behance" title="Behance link" rel="noopener" aria-label="Follow on Behance——Opens in a new window">
+      {{ partial "svg/behance.svg" }}
+      </a>
+    </li>
+    {{ end }}
+  
+    {{ with .Param "deviantart" }}
+    <li>
+      <a href="{{ . }}" target="_blank" class="deviantart" title="Deviantart link" rel="noopener" aria-label="Follow on Deviantart——Opens in a new window">
+      {{ partial "svg/deviantart.svg" }}
+      </a>
+    </li>
+    {{ end }}
+  
+          {{ with .Param "discord" }}
+          <li>
+      <a href="{{ . }}" target="_blank" class="discord" title="Discord link" rel="noopener" aria-label="Follow on Discord——Opens in a new window">
+      {{ partial "svg/discord.svg" }}
+      </a>
+    </li>
+    {{ end }}
+  
+          {{ with .Param "discourse" }}
+          <li>
+      <a href="{{ . }}" target="_blank" class="discourse" title="Discourse link" rel="noopener" aria-label="Follow on Discourse——Opens in a new window">
+      {{ partial "svg/discourse.svg" }}
+      </a>
+    </li>
+    {{ end }}
+  
+    {{ with .Param "dribbble" }}
+    <li>
+      <a href="{{ . }}" target="_blank" class="dribbble" title="Dribbble link" rel="noopener" aria-label="Follow on Dribbble——Opens in a new window">
+      {{ partial "svg/dribbble.svg" }}
+      </a>
+    </li>
+    {{ end }}
+  
+    {{ with .Param "facebook" }}
+    <li>
+      <a href="{{ . }}" target="_blank" class="facebook" title="Facebook link" rel="noopener" aria-label="Follow on Facebook——Opens in a new window">
+      {{ partial "svg/facebook.svg" }}
+      </a>
+    </li>
+    {{ end }}
+  
+          {{ with .Param "facebook_messenger" }}
+          <li>
+      <a href="{{ . }}" target="_blank" class="facebook_messenger" title="Facebook Messenger link" rel="noopener" aria-label="Let's talk on Facebook Messenger——Opens in a new window">
+      {{ partial "svg/facebook_messenger.svg" }}
+      </a>
+    </li>
+    {{ end }}
+  
+          {{ with .Param "git" }}
+          <li>
+      <a href="{{ . }}" target="_blank" class="git" title="Git link" rel="noopener" aria-label="Follow on Git——Opens in a new window">
+      {{ partial "svg/git.svg" }}
+      </a>
+    </li>
+    {{ end }}
+  
+          {{ with .Param "github" }}
+          <li>
+      <a href="{{ . }}" target="_blank" class="github" title="Github link" rel="noopener" aria-label="Follow on Github——Opens in a new window">
+      {{ partial "svg/github.svg" }}
+      </a>
+    </li>
+    {{ end }}
+  
+          {{ with .Param "gitkraken" }}
+          <li>
+      <a href="{{ . }}" target="_blank" class="gitkraken" title="Gitkraken link" rel="noopener" aria-label="Follow on Gitkraken——Opens in a new window">
+      {{ partial "svg/gitkraken.svg" }}
+      </a>
+    </li>
+    {{ end }}
+  
+          {{ with .Param "gitlab" }}
+          <li>
+      <a href="{{ . }}" target="_blank" class="gitlab" title="Gitlab link" rel="noopener" aria-label="Follow on Gitlab——Opens in a new window">
+      {{ partial "svg/gitlab.svg" }}
+      </a>
+    </li>
+    {{ end }}
+  
+          {{ with .Param "gitter" }}
+          <li>
+      <a href="{{ . }}" target="_blank" class="gitter" title="Gitter link" rel="noopener" aria-label="Follow on Gitter——Opens in a new window">
+      {{ partial "svg/gitter.svg" }}
+      </a>
+    </li>
+    {{ end }}
+  
+          {{ with .Param "hacker_news" }}
+          <li>
+      <a href="{{ . }}" target="_blank" class="hacker_news" title="Hacker News link" rel="noopener" aria-label="Follow on Hacker News——Opens in a new window">
+      {{ partial "svg/hacker_news.svg" }}
+      </a>
+    </li>
+    {{ end }}
+  
+    {{ with .Param "instagram" }}
+    <li>
+      <a href="{{ . }}" target="_blank" class="instagram" title="Instagram link" rel="noopener" aria-label="Follow on Instagram——Opens in a new window">
+      {{ partial "svg/instagram.svg" }}
+      </a>
+    </li>
+    {{ end }}
+  
+          {{ with .Param "linkedin" }}
+          <li>
+      <a href="{{ . }}" target="_blank" class="linkedin" title="Linkedin link" rel="noopener" aria-label="Follow on Linkedin——Opens in a new window">
+      {{ partial "svg/linkedin.svg" }}
+      </a>
+    </li>
+    {{ end }}
+  
+    {{ with .Param "mailchimp" }}
+    <li>
+      <a href="{{ . }}" target="_blank" class="mailchimp" title="Mailchimp link" rel="noopener" aria-label="Join the newsletter on Mailchimp——Opens in a new window">
+      {{ partial "svg/mailchimp.svg" }}
+      </a>
+    </li>
+    {{ end }}
+  
+          {{ with .Param "mastodon" }}
+          <li>
+      <a href="{{ . }}" target="_blank" class="mastodon" title="Mastodon link" rel="noopener" aria-label="Follow on Mastodon——Opens in a new window">
+      {{ partial "svg/mastodon.svg" }}
+      </a>
+    </li>
+    {{ end }}
+  
+          {{ with .Param "medium" }}
+          <li>
+      <a href="{{ . }}" target="_blank" class="medium" title="Medium link" rel="noopener" aria-label="Follow on Medium——Opens in a new window">
+      {{ partial "svg/medium.svg" }}
+      </a>
+    </li>
+    {{ end }}
+  
+    {{ with .Param "pinterest" }}
+    <li>
+      <a href="{{ . }}" target="_blank" class="pinterest" title="Pinterest link" rel="noopener" aria-label="Follow on Pinterest——Opens in a new window">
+      {{ partial "svg/pinterest.svg" }}
+      </a>
+    </li>
+    {{ end }}
+  
+          {{ with .Param "reddit" }}
+          <li>
+      <a href="{{ . }}" target="_blank" class="reddit" title="Reddit link" rel="noopener" aria-label="Follow on Reddit——Opens in a new window">
+      {{ partial "svg/reddit.svg" }}
+      </a>
+    </li>
+    {{ end }}
+  
+          {{ with .Param "snapchat" }}
+          <li>
+      <a href="{{ . }}" target="_blank" class="snapchat" title="Snapchat link" rel="noopener" aria-label="Follow on Snapchat——Opens in a new window">
+      {{ partial "svg/snapchat.svg" }}
+      </a>
+    </li>
+    {{ end }}
+  
+    {{ with .Param "tumblr" }}
+    <li>
+      <a href="{{ . }}" target="_blank" class="tumblr" title="Tumblr link" rel="noopener" aria-label="Follow on Tumblr——Opens in a new window">
+      {{ partial "svg/tumblr.svg" }}
+      </a>
+    </li>
+    {{ end }}
+  
+          {{ with .Param "twitter" }}
+          <li>
+      <a href="{{ . }}" target="_blank" class="twitter" title="Twitter link" rel="noopener" aria-label="Follow on Twitter——Opens in a new window">
+      {{ partial "svg/twitter.svg" }}
+      </a>
+    </li>
+    {{ end }}
+  
+          {{ with .Param "vimeo" }}
+          <li>
+      <a href="{{ . }}" target="_blank" class="vimeo" title="Vimeo link" rel="noopener" aria-label="Follow on Vimeo——Opens in a new window">
+      {{ partial "svg/vimeo.svg" }}
+      </a>
+    </li>
+    {{ end }}
+  
+    {{ with .Param "youtube" }}
+    <li>
+      <a href="{{ . }}" target="_blank" class="youtube" title="YouTube link" rel="noopener" aria-label="Follow on YouTube——Opens in a new window">
+      {{ partial "svg/youtube.svg" }}
+      </a>
+    </li>
+    {{ end }}
+  
+          {{ with .Param "email" }}
+          <li>
+      <a href="{{ . }}" target="_blank" class="email" title="Email link" rel="noopener" aria-label="Get in touch by email——Opens in a new window">
+      {{ partial "svg/telegram_plane.svg" }}
+      </a>
+    </li>
+    {{ end }}
+  
+  
+  
+  
+  
+  
+  
+  </ul>
+  
+  <!-- TODO Fix the aria-label below -->
+  {{ with .Param "email" }}
+  <p>
+    {{ partial "svg/telegram_plane.svg" }}
+    <a href="{{ . }}" target="_blank" class="email" title="Email link" rel="noopener" aria-label="Get in touch by email——Opens in a new window">
+    <span>Hello@ThisIsMyDomain.com</span>
+    </a>
+  </p>
+  {{ end }}
+  
+  
+  
+    </section>
+  

@@ -1,0 +1,11 @@
+{{ with .Params.tags -}}
+<dl class="">
+ <dt>Tags</dt>
+  {{ range . }}
+  <dd>
+    {{ $href := print (absURL "tags/") (urlize .) }}
+    <a href="{{ $href }}">{{- . -}}</a>
+    </dd>
+  {{ end }}
+  </dl>
+{{ end }}

@@ -1,0 +1,18 @@
+<!-- { { if .Params.lastmod }} -->
+<!-- IDEA Remove as many display boolean requirements as possible -->
+{{ if eq .Params.lastmodDisplay true }}
+<dl class="date-modified">
+    <dt>Updated</dt>
+    {{ $lastmodDateTime := .Lastmod.Format "2006-01-02" }}
+    {{ $lastmodDateFormat := .Site.Params.dateFormat | default "Jan 02, 2006" }}
+    <!-- TODO Be sure to include or at least consider including various display types for the date based on variables. And/OR at least just simplify the date below and add notes about the different date configuration in the docs { { .Date.Format "January 2, 2006" }} -->
+    <dd>
+        <time datetime="{{ $lastmodDateTime }}">{{ .Lastmod.Format $lastmodDateFormat }}</time>
+    </dd>
+</dl>
+{{ end }}
+
+{{/* <!-- TODO Check if you need to have dateFormat or do you need to impliment it in your config file? --> */}}
+{{/* <!-- TODO Make note of { { humanize .Section | upper  }} in your docs --> */}}
+
+{{/* <!-- TODO Make the partial meta Titles be controlled from the config file --> */}}

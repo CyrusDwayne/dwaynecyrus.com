@@ -1,0 +1,244 @@
+<!-- TODO Test making the requred value work as well as the autocomplete -->
+<!-- TODO Copy the styling of water CSS it's simple and effective in its functions -->
+<!-- TODO really make the ultimate form by replicating these https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/tel -->
+<form
+  class="form"
+  name="general"
+  action="/contact/message-sent/"
+  method="POST"
+  data-netlify="true"
+>
+
+  <input type="hidden" name="form-name" value="general" />
+
+  <fieldset>
+	<legend>Contact Info & Message:</legend>
+
+  <!-- First Name -->
+    <label for="first-name">First Name</label>
+      <input
+        name="first-name"
+        type="text"
+        placeholder="First Name"
+        required=""
+        autocomplete="off"
+      />
+
+
+      <!-- Last Name -->
+    <label for="last-name">Last Name</label>
+      <input
+        name="last-name"
+        type="text"
+        placeholder="Last Name"
+        required=""
+        autocomplete="off"
+      />
+
+
+  <!-- Email Address -->
+    <label for="email-address">Email Address</label>
+      <input
+        name="email-address"
+        type="email"
+        placeholder="Email Address"
+        required=""
+        autocomplete="off"
+      />
+
+      <!-- TODO Add phone number field -->
+
+  <!-- Subject -->
+    <label for="subject">Subject</label>
+      <input
+        name="subject"
+        type="text"
+        placeholder="Subject"
+        required=""
+        autocomplete="off"
+      />
+
+
+  <!-- Message -->
+    <label for="message">Message</label>
+    <textarea
+      name="message"
+      placeholder="Message"
+      required=""
+      rows="3"
+    ></textarea>
+</fieldset>
+
+
+
+  <fieldset>
+	<legend>Shipping Address:</legend>
+
+    <!-- Shipping Name -->
+    <label for="shipping-name">Shipping Name</label>
+        <input
+        name="shipping-name"
+        type="text"
+        placeholder="Full Name"
+        required=""
+        autocomplete="off"
+    />
+
+    <!-- Phone Number -->
+    <label for="phone-number">Phone Number</label>
+    <input 
+    name="phone-number"
+    type="tel"
+    placeholder="012-345-6789"
+           pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+           required=""
+           autocomplete="off"
+           />
+
+    <!-- Address Line 1 -->
+    <label for="addess-line-1">Address Line 1</label>
+        <input
+        name="addess-line-1"
+        type="text"
+        placeholder="Address Line 1"
+        required=""
+        autocomplete="off"
+    />
+
+    <!-- Address Line 2 -->
+    <label for="addess-line-2">Address Line 2</label>
+        <input
+        name="addess-line-2"
+        type="text"
+        placeholder="Address Line 2"
+        required=""
+        autocomplete="off"
+    />
+
+    <!-- Country -->
+    <!-- TODO In the future have this be a dropdown -->
+    <label for="country">Country</label>
+        <input
+        name="country"
+        type="text"
+        placeholder="Country"
+        required=""
+        autocomplete="off"
+    />
+
+    <!-- Town/City -->
+    <label for="town-city">Town/City</label>
+        <input
+        name="town-city"
+        type="text"
+        placeholder="Town or City"
+        required=""
+        autocomplete="off"
+    />
+
+    <!-- State/Province -->
+    <label for="state-province">State/Province</label>
+        <input
+        name="state-province"
+        type="text"
+        placeholder="State or Province"
+        required=""
+        autocomplete="off"
+    />
+</fieldset>
+
+
+
+
+<fieldset>
+	<legend>Miscellaneous</legend>
+    <!-- User ID (Read Only) -->
+    <label for="id">User ID (Read Only)</label>
+    <input 
+    name="id"
+    readonly=""
+    value="04D6H89Z"
+           />
+        
+               <!-- Disabled Input -->
+    <label for="disabled">Disabled Input</label>
+    <input
+    name="disabled"
+    placeholder="Why not?"
+/>
+
+<!-- 
+- To define a pre-selected option, add the selected attribute to the option
+- Use the size attribute to specify the number of visible values
+- Use the multiple attribute to allow the user to select more than one value
+-->
+<!-- Select Input -->
+<label for="select">Select Input: Multiple</label>
+<select id="select" name="cars" size="4" multiple >
+  <option value="volvo">Volvo</option>
+  <option value="saab">Saab</option>
+  <option value="fiat">Fiat</option>
+  <option value="audi" selected >Audi</option>
+</select>
+
+<label for="select">Select Input: Single</label>
+<select id="select" name="cars" size="1" >
+  <option value="volvo">Volvo</option>
+  <option value="saab">Saab</option>
+  <option value="fiat">Fiat</option>
+  <option value="audi" selected >Audi</option>
+</select>
+
+
+<!-- Datalist Input -->
+<!-- <form action="/action_page.php"> -->
+  <label for="datalist">Datalist Input</label>
+    <input list="browsers" />
+    <datalist id="browsers">
+      <option value="Internet Explorer">
+      <option value="Firefox">
+      <option value="Chrome">
+      <option value="Opera">
+      <option value="Safari">
+    </datalist>
+  <!-- </form> -->
+
+
+
+
+<!-- Range Input -->
+  <!-- <form action="/action_page.php"
+oninput="x.value=parseInt(a.value)+parseInt(b.value)"> -->
+<label for="range">Range Input (not working)</label> 
+0
+  <input type="range" id="a" name="a" value="50" />
+  100 +
+  <input type="number" id="b" name="b" value="50" />
+  =
+  <output name="x" for="a b"></output>
+  <br><br>
+  <input type="submit" />
+<!-- </form> -->
+
+
+
+<!-- Radio Input -->
+<label for="range">Radio Input</label> 
+<div>
+<input type="radio" id="john" name="drone" value="john" checked="">
+<label for="john">John Doe</label>
+</div>
+<div>
+<input type="radio" id="jane" name="drone" value="jane" checked="">
+<label for="jane">Jane Doe</label>
+</div>
+</fieldset>
+
+  <!-- Button: Submit-->
+  <button type="submit" value="submit" >Submit</button>
+
+  <!-- Button: Reset -->
+  <button type="reset" value="reset" >Reset</button>
+
+
+</form>

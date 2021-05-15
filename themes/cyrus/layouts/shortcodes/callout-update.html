@@ -1,0 +1,10 @@
+
+<blockquote class="callout update">
+    <!-- TODO Add a update icon or mascott -->
+
+    <h6>Update{{ with .Get "customTitle" }}<span>: {{ . }}</span>{{ end }}
+    </h6> 
+
+    {{ with .Get "customText" }}<p>{{ . | markdownify }}
+</p>{{ end }}
+</blockquote>

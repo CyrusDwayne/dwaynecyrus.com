@@ -1,0 +1,5 @@
+{{ with .Params.categories }}
+<dl class="category-list">
+<dt>Category</dt>{{ range . }}{{ $href := print (absURL "categories/") (urlize .) }}<dd><a href="{{ $href }}">{{- . -}}</a></dd>{{ end }}
+</dl>
+{{ end }}{{/* <!-- /with .Params.categories --> */}}

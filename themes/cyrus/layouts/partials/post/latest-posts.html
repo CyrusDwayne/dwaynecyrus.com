@@ -1,0 +1,7 @@
+<ol class="range-list">
+    {{ range last 3 .Pages.ByPublishDate.Reverse }}
+    <li class="range-list__item">
+        {{ .Render "li"}}
+    </li>
+    {{ end }}
+</ol>

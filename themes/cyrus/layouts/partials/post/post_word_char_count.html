@@ -1,0 +1,25 @@
+<section class="post-word-char-count">
+
+    <ul class="">
+
+      {{ with .Params.tags }}
+      <li class="tags">
+        <span>#:</span>
+        {{ range . }}
+        {{ $href := print (absURL "tags/") (urlize .) }}
+        <a class="" href="{{ $href }}">{{- . -}}</a><span class="end-comma">,&nbsp</span>
+        {{ end }}
+      </li>
+      {{ end }}
+
+      <li class="word-count">
+        <span>Word Count:</span> {{ .Content | countwords }}
+      </li>
+
+      <li class="characters">
+        <span>Character (minus spaces):</span> {{ .Content | countrunes }}
+      </li>
+
+    </ul>
+
+</section>

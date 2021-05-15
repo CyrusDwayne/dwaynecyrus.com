@@ -1,0 +1,5 @@
+{{ with .Params.collections }}
+<dl class="category-list">
+<dt>Collection</dt>{{ range . }}{{ $href := print (absURL "collections/") (urlize .) }}<dd><a href="{{ $href }}">{{- . -}}</a></dd>{{ end }}
+</dl>
+{{ end }}
