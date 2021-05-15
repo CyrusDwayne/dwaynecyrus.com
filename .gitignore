@@ -1,0 +1,10 @@
+# Personal code referencing while building
+tmp
+temp
+_temp
+
+# Apples file folder configuration
+.DS_Store
+
+# Hugo's local build folder built with the "hugo" command
+public
