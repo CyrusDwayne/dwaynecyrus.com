@@ -1,0 +1,21 @@
+.network-menu {
+    color: white;
+    background-color: black;
+    width: fit-content;
+    left: -100%;
+    position: relative;
+    transition: left 1s;
+    /* opacity: 0.4; */
+    height: 100%;
+    position: absolute;
+    top: 0;
+    /* left: 0; */
+    padding: 40px;
+    /* TODO Make use of translate/transform to animate the menu reveal */
+}
+
+.show-network-menu .network-menu {
+    left: 0%;
+    /* color: red; */
+    /* background-color: red; */
+}

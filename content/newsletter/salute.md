@@ -5,12 +5,12 @@ layout: ""
 feature: false
 
 url: ""
-slug: ""
+slug: "" 
 aliases: []
 linkTitle: ""
 
-date: 2021-05-14T08:51:00-04:00
-publishDate: ""
+date: 2021-05-15T13:54:07-04:00
+publishDate:
 expiryDate: ""
 lastmod: ""
 lastmod_display: false
@@ -20,7 +20,7 @@ date_finish: ""
 date_modify: ""
 
 series: []
-title: "Reminder"
+title: "Salute"
 subtitle: ""
 summary: ""
 description: ""
@@ -57,17 +57,7 @@ featured_display: false
 tldr_display: false
 ---
 
-## heads up
-
-## You are almost there, just a little further...
-Welcome to the Familia! Be sure to check your email to confirm the subscription.
-
-https://dwaynecyrus.com/newsletter/success
-
-https://app.convertkit.com/confirm-subscription
+## Well hello good lookin'
+So glad to have you aboard this voyage of life...some more stuff...be sure to connect them to your voyager system and the discord 
 
 
-this? You're almost subscribed!
-I sent you an email to confirm your address. Click it and you're in! 
-
-with a button that take them back to whatever page they were on in history

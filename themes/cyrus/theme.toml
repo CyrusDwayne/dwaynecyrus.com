@@ -1,0 +1,20 @@
+# TODO Fill out the theme.toml before sharing with the public. // theme.toml template for a Hugo theme // See https://github.com/gohugoio/hugoThemes#themetoml for an example
+name = "Gestalt UI"
+license = "MIT"
+licenselink = "https://github.com/yourname/yourtheme/blob/master/LICENSE"
+description = "A theme for everyone"
+homepage = "https://dwaynecyrus.com/project/theme-page?"
+tags = []
+features = []
+min_version = "0.72.0"
+
+[author]
+  name = "Dwayne Cyrus"
+  homepage = "https://dwaynecyrus.com/projects/gestalt-hugo"
+
+# Use if porting an existing theme
+[original]
+  name = ""
+  homepage = ""
+  repo = ""
+# TODO Fill out the theme.toml before sharing with the public.

@@ -1,0 +1,81 @@
+<!-- Vendor -->
+<!-- { { if site.Params.font_load_typekit }} -->
+<!-- <link rel="stylesheet" href="https://use.typekit.net/rof4vpx.css"> -->
+<link rel="stylesheet" href="{{ .Site.Params.font_load_typekit }}">
+
+<!-- Typoography Reset -->
+{{ $modernNormalize := "vendor/modern-normalize.css" | absURL }}
+<link rel="stylesheet" href="{{ $modernNormalize }}">
+
+{{ $tailwindReset := "vendor/tailwind-reset.css" | absURL }}
+<link rel="stylesheet" href="{{ $tailwindReset }}">
+
+
+
+
+<!-- Gestalt -->
+{{ $gestaltLayout := "vendor/gestalt/gestalt-layout.css" | absURL }}
+<link rel="stylesheet" href="{{ $gestaltLayout }}">
+
+{{ $gestaltTypography := "vendor/gestalt/gestalt-typography.css" | absURL }}
+<link rel="stylesheet" href="{{ $gestaltTypography }}">
+
+{{ $gestaltModules := "vendor/gestalt/gestalt-modules.css" | absURL }}
+<link rel="stylesheet" href="{{ $gestaltModules }}">
+
+
+
+
+<!-- Navigation -->
+{{ $navigation := "styles/navigation.css" | absURL }}
+<link rel="stylesheet" href="{{ $navigation }}">
+
+
+
+
+
+<!-- Local Specific -->
+<!-- TocBot.js Files -->
+<!-- CSS is used for expanding & collapsing groupings and some basic styling. -->
+{{ $tocbotCSS := "vendor/tocbot/tocbot.css" | absURL }}
+<link rel="stylesheet" href="{{ $tocbotCSS }}">
+
+<!-- {{ $tocbotStylesCSS := "vendor/tocbot/stylesX.css" | absURL }}
+<link rel="stylesheet" href="{{ $tocbotStylesCSS }}"> -->
+
+<!-- StickyBits -->
+<style>
+    .js-is-sticky { 
+    background-color:transparent; 
+    border: solid 2px orange;
+    /* BUG Without the defined height the sticky unsticks and random points */
+    max-height: 96vh; 
+    height: 96vh;
+    }
+</style>
+
+<!-- Swiper -->
+<style>
+    .swiper-container {
+    
+    
+      /* Ratio Test */
+      position: relative;
+    padding-bottom: 56.25%; /* 16:9, for an aspect ratio of 1:1 change to this value to 100% */ 
+    background-color: pink;
+    }
+    .swiper-wrapper {
+        position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    }
+    </style>
+
+
+
+
+<!-- Custom -->
+<!-- {{ $customCSS := "styles/custoX.css" | absURL }}
+<link rel="stylesheet" href="{{ $customCSS }}"> -->

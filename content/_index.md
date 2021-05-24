@@ -20,8 +20,8 @@ date_finish: ""
 date_modify: ""
 
 series: []
-title: ""
-subtitle: ""
+title: "Homepage"
+subtitle: "Struggle & Strive"
 summary: ""
 description: ""
 
@@ -57,11 +57,6 @@ featured_display: false
 tldr_display: false
 ---
 
-```
-<p><code>This site is currently under construction. Please pardon the appearance. I'll be publicly documenting my steps along the way in <a href="{{ "projects/building-my-website/" | absURL }}">my website</a>, so feel free to tag along.</code></p>
-```
-
----
 
 <!-- Turn this into a quote with your name -->
 Love. Train. Hunt. Farm. Repeat. (on hover "what is this")
@@ -81,100 +76,10 @@ Think digital garden — seeds of creativity, productivity, and strategy with a 
 
 Think living documentary — the ups and downs of life, winning and losing, all recorded as an example for how to live life.
 
-MODAL: `{{ partial "forms/subscribe-home-modal.html" . }}`
-
-MODAL: Consider this to be the "give me a quick tour button"
-          
-MODAL: `<a class="button" href="#">Me in 8 Seconds<span></span></a>`
-
 ---
 
-```
-  <p>Me in a few words...</p>
-  <div class="word-wall-bio">
-    <p class="word-wall-bio__storyteller">All-Round Storyteller</p>
-    <p class="word-wall-bio__survivor">Male Survivor</p>
-    <p class="word-wall-bio__speaker">Speaker of Hard Truths</p>
-    <p class="word-wall-bio__designer-artist">Artist &amp; Designer</p>
-    <p class="word-wall-bio__builder">Builder of Community</p>
-    <p class="word-wall-bio__strategist">Brand Strategist</p>
-    <p class="word-wall-bio__writer">Writer of Many Words</p>
-    <p class="word-wall-bio__student">Eternal Student</p>
-    <p class="word-wall-bio__thinker">Neurodivergent Thinker</p>
-    <p class="word-wall-bio__lover">Lover of humans</p>
-    <p class="word-wall-bio__follower">Follower of the Prophet</p>
-</div>
-<img src="/images/icons/pixel-heart.png">
-```
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Purus gravida quis blandit turpis cursus. Viverra mauris in aliquam sem fringilla ut morbi. Vel pretium lectus quam id. Lobortis scelerisque fermentum dui faucibus in ornare quam. Viverra maecenas accumsan lacus vel facilisis. Sagittis nisl rhoncus mattis rhoncus urna neque viverra justo. Egestas sed sed risus pretium quam vulputate dignissim suspendisse in. Potenti nullam ac tortor vitae purus faucibus ornare suspendisse sed. Hac habitasse platea dictumst quisque sagittis. Sed euismod nisi porta lorem mollis aliquam ut. Nulla aliquet enim tortor at auctor urna nunc id cursus. Ultrices gravida dictum fusce ut placerat orci nulla. Aliquet porttitor lacus luctus accumsan tortor posuere. Scelerisque in dictum non consectetur. Volutpat ac tincidunt vitae semper quis lectus nulla at volutpat. Varius quam quisque id diam. Metus dictum at tempor commodo ullamcorper a lacus vestibulum. Pellentesque dignissim enim sit amet venenatis. Bibendum est ultricies integer quis auctor.
 
----
+Id aliquet lectus proin nibh nisl condimentum id venenatis a. Id leo in vitae turpis. Morbi tristique senectus et netus et. Id cursus metus aliquam eleifend. Purus sit amet volutpat consequat mauris. Vitae purus faucibus ornare suspendisse sed nisi lacus sed viverra. Ultrices dui sapien eget mi proin sed libero enim. Elementum tempus egestas sed sed risus. Molestie a iaculis at erat pellentesque adipiscing. Id nibh tortor id aliquet lectus proin nibh nisl condimentum.
 
-```
-<section class="announcements">
-    <article class="slider">
-      <header>
-        <div class="label">
-          <!-- <p> -->
-            <span>Guess What!?</span>
-            <span>The Shop is Open</span>
-          <!-- </p> -->
-        </div>
-      </header>
-      <div class="article-body">
-        <h3>Prints, Prints Prints!</h3>
-        <p>Habitasse platea dictumst quisque sagittis purus sit amet volutpat consequat. Pellentesque habitant morbi tristique senectus et netus et malesuada fames. Cras adipiscing enim eu turpis egestas pretium. Pellentesque nec nam aliquam sem...
-          <!-- <a href="#">continue reading</a> -->
-        </p>
-      </div>
-      <aside>
-        <img src="/images/dummy/bw-illustration.png">
-      </aside>
-      <footer>
-        <a class="button" href="#">Visit the Shop <span></span></a>
-      </footer>
-    </article>
-    <!-- TODO Consider adding the aside image below for mobile // Also the character add this at soem point -->
-    <!-- <img src="/images/characters/home-welcome.png"> -->
-  </section>
-```
-
----
-
-```
-  <section class="newsletter">
-    <h3>Familia Newsletter</h3>
-    <p>Think of it like a digital penpal from me to you.To start, I’m beginning with a weekly newsletter, a digest of everything I’m learning with practical tips and
-      lessons that you can implement in you own life.
-    </p>
-    <p>A weekly digest of everything I'm learning from my wins and losses each week, as I grow my reputation (the brand), develop as an artist and designer, and build my business from the ground up.</p>
-    <p>If you are down for hard truths and putting in the work, join the tribe and let's design our
-      lives together!</p>
-      <!-- IDEA CONSIDER Adding <p>
-        The best way to keep up with my progress is through my weekly [Wholesome Letters](/letters). It's where I will share the small beauties that I experience in my life like a pen pal. I will also include any useful links for my fellow neurodivergents, survivors, and creatives.
-      </p> -->
-
-    <!-- { { partial "forms/subscribe-home.html" . }} -->
-
-    <!-- <p class="subscribe-note"><small><strong>Note:</strong> Note: I will never sell, trade, spam or do anything dishonorable with your information. There’s also an <a href="/newsletter">archive of past newsletters</a> if you want to get a better sense of what to expect from week to week.</small></p> -->
-  </section>
-```
-
----
-
-Consider using some of the content below:
-
-```
-  <section>
-    <p>Welcome to the construction zone that is my home on the interweb. I am a skilled logo & graphic designer, visual artist across mediums, and content creator (YouTube life).</p>
-
-    <p>My website acts as a living testament and representation of me reclaiming my voice. As a neurodivergent person of color and childhood/adult male survivor, I have unique perspective on life that I believe can help others. I will be documenting my journey in accepting my neurodivergent identity, healing sexual abuse & trauma, and my development as an independent artist & designer. While documenting I will curate and share my learnings here for others like myself.</p>
-    
-    
-    
-    <p>I am available for hire as a designer and commissions as an artist, you can find available originals and prints at my humble [Shop](/shop). If any of my personal art interests you for purchase or to be made into a print, please let me know.</p>
-    
-    <p>Oh, and by request of my family (shout-out the Cheer Squad) I have made available a few ways in which you can show me some love on the [Support Page](/support). By the way I think snail mail is awesome, so feel free to write me.</p>
-    
-    <p>Last, but not least the website will be updated weekly with new content (notes, poems, art, etc.) so be sure to come back and visit me again. Or signup for my Wholesome Letters to get the warmest of the latest and greatest from me.</p>
-  </section>
-```
+Phasellus vestibulum lorem sed risus ultricies tristique nulla. Velit laoreet id donec ultrices tincidunt. Tempor commodo ullamcorper a lacus vestibulum sed. Sollicitudin aliquam ultrices sagittis orci a scelerisque purus semper. Ultricies tristique nulla aliquet enim tortor at. Porta lorem mollis aliquam ut porttitor leo a. Quis varius quam quisque id diam vel quam elementum pulvinar. Sapien pellentesque habitant morbi tristique. Accumsan in nisl nisi scelerisque eu ultrices. Nisi est sit amet facilisis magna.

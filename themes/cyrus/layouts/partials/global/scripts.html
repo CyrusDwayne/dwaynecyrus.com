@@ -1,81 +1,20 @@
-<!-- Vendor -->
-<!-- <script src="https://f.convertkit.com/ckjs/ck.5.js"></script> -->
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-
+<!-- Hide/Show Menu -->
+{{ $jqueryJS := "scripts/global/jquery-3.6.0.min.js" | absURL }}
+<script src="{{ $jqueryJS }}"></script>
 
 
+<!-- Hide/Show Menu -->
+{{ $hideShowMenuJS := "scripts/navigation/hide-show-menu.js" | absURL }}
+<script src="{{ $hideShowMenuJS }}"></script>
 
-<!-- Navigation -->
-{{ $mainMenu := "scripts/global/main-menu.js" | absURL }}
-<script src="{{ $mainMenu }}"></script>
-
-{{ $globalMenu := "scripts/global/global-menu.js" | absURL }}
-<script src="{{ $globalMenu }}"></script>
-
-{{ $networkMenu := "scripts/global/network-menu.js" | absURL }}
-<script src="{{ $networkMenu }}"></script>
-
-{{ $localMenu := "scripts/global/local-menu.js" | absURL }}
+<!-- Local Menu Expander -->
+{{ $localMenu := "scripts/navigation/local-menu.js" | absURL }}
 <script src="{{ $localMenu }}"></script>
 
-<!-- Modules -->
-{{ $modal := "scripts/global/modal.js" | absURL }}
-<script src="{{ $modal }}"></script>
+<!-- Network Menu -->
+{{ $networkMenu := "scripts/navigation/network-menu.js" | absURL }}
+<script src="{{ $networkMenu }}"></script>
 
-
-
-
-<!-- Local Specific -->
-<!-- TocBot -->
-{{ $tocbotJS := "vendor/tocbot/tocbot.js" | absURL }}
-<script src="{{ $tocbotJS }}"></script>
-
-<script>
-    tocbot.init({
-  // Where to render the table of contents.
-  tocSelector: '.js-toc',
-  // Where to grab the headings to build the table of contents.
-  contentSelector: '.js-toc-content',
-  // Which headings to grab inside of the contentSelector element.
-  headingSelector: 'h1, h2, h3, h4, h5',
-  // For headings inside relative or absolute positioned containers within content.
-  hasInnerContainers: true,
-});
-</script>
-<!-- TODO Explore all of the options for TOCBot in an examples file with stickybits -->
-
-<!-- StickyBits -->
-{{ $stickybitsJS := "vendor/stickybits/stickybits.js" | absURL }}
-<script src="{{ $stickybitsJS }}"></script>
-<script>
-    stickybits('.stickybit-aside-left', { 
-        useStickyClasses: true,
-        stickyBitStickyOffset: 20
-        });
-</script>
-
-<!-- Initialize -->
-<script>
-  const swiper = new Swiper('.swiper-container', {
-      // Optional parameters
-      direction: 'horizontal',
-      loop: true,
-    
-      // If we need pagination
-      pagination: {
-        el: '.swiper-pagination',
-      },
-    
-      // Navigation arrows
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
-    
-      // And if we need scrollbar
-      scrollbar: {
-        el: '.swiper-scrollbar',
-      },
-    });
-    </script>
+<!-- global Menu -->
+{{ $globalMenu := "scripts/navigation/global-menu.js" | absURL }}
+<script src="{{ $globalMenu }}"></script>

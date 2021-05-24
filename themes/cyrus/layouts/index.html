@@ -4,20 +4,51 @@
     <head>
         {{ partial "global/meta.html" . }}
         {{ partial "global/styles.html" . }}
-        {{ block "styles-local" . }}{{ end }}
+        {{ block "styles-local" . }}
+
+        {{ end }}
+        <style>
+            body {
+                position: relative;
+            }
+            .top-fade {
+                border-top: black solid 8px;
+
+                display: block;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 72px;
+                background: rgb(255,255,255);
+background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 20%, rgba(255,255,255,0.7693277994791666) 64%, rgba(255,255,255,0.010224158022584029) 100%); 
+            }
+            .top-bar {
+                width: 100%;
+                height: 4px;
+                background-color: black;
+                position: fixed;
+z-index: 80;
+top: 0;
+left: 0;
+            }
+        </style>
     </head>
       
-    <body id="body">        
+    <body id="body" class="nav-down"> 
+
+        <div class="top-bar"></div>
+        <div class="top-fade"></div>
         
         {{ partial "global/notification-message.html" . }}
 
-        <div id="body__navigation">
+        <div id="navigation">
         {{ partial "navigation/action-menu" . }}
         {{ partial "navigation/main-menu" . }}
         {{ partial "navigation/local-menu" . }}
         {{ partial "navigation/network-menu" . }}
         {{ partial "navigation/global-menu" .}}
-        {{ partial "navigation/lazy-menu.html" . }}
+        <!-- { { partial "navigation/lazy-menu.html" . }} -->
         </div>
 
         <div id="body__content">
@@ -36,19 +67,18 @@
 
                 <main id="main">
                     {{ block "main-local" . }}
-                    <div class="undergoing-construction">
-                        <div>
+                    {{ .Content }}
+                    <!-- <div class="undergoing-construction">
+                        <div> -->
                     <!-- TODO Make use of the bio you send Yasmin and the big text wall maybe? -->
-                    <h1>Undergoing Construction
+                    <!-- <h1>Undergoing Construction
                     </h1>
                     <h3>Get Loving Updates</h3>
                     <p>Subscribe for your weekly letter like a penpal, but with tips on being creattive & productive, practical life lessons, and insights from the interwebs.</p>
-                    <!-- <button>Join the Familia</button> -->
-                    {{ partial "modal/modal-subscribe.html" . }}
-                    
-                    <!-- <button>The Socials</button> -->
-                </div>
-                </div>
+                    { { partial "modal/modal-subscribe.html" . }} -->
+                
+                <!-- </div>
+                </div> -->
                     {{ end }}
                 </main>
 

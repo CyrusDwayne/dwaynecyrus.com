@@ -1,0 +1,578 @@
+/* body {
+  background-color: #ffe2bc; */
+
+
+
+
+#navigation {
+    display: none;
+}
+
+
+/* ------------------------------------------ */
+/* TODO Update Chevron on Local Menu // Be sure to replace this with something more appropriate like an svg
+** ------------------------------------------ */
+.chevron::before {
+  border-style: solid;
+  border-width: 0.25em 0.25em 0 0;
+  content: "";
+  display: inline-block;
+  height: 0.45em;
+  left: 0.15em;
+  position: relative;
+  top: 0.15em;
+  transform: rotate(-45deg);
+  vertical-align: top;
+  width: 0.45em;
+}
+
+.chevron.right:before {
+  left: 0;
+  transform: rotate(45deg);
+}
+
+.chevron.bottom:before {
+  top: 0;
+  transform: rotate(135deg);
+}
+
+.chevron.left:before {
+  left: 0.25em;
+  transform: rotate(-135deg);
+}
+
+  /* ------------------------------------------ */
+  /* Action Menu
+  ** ------------------------------------------ */
+/* TODO split into action menu */
+.brand-signature {
+    position: fixed;
+    top: 4px;
+    top: 6px;
+    left: 0;
+    z-index: 80;
+    /* background-color: tomato; */
+    }
+    .brand-signature button {
+      display: flex;
+      align-items: center;
+  }
+    .brandmark__icon {
+      padding: 8px 9px 4px 9px;
+      padding: 10px 12px 6px 12px;
+      width: 44px;
+      width: 48px;
+      background-color: yellow;
+      background-color: black;
+      border-radius: 0 8px 8px 0;
+    /* display: flex; */
+    /* justify-content: center; */
+    /* align-items: center; */
+    }
+    .brandmark__text {
+      display: none;
+      margin: 0 12px;
+      font-family: atten-new, sans-serif;
+      font-weight: 700;
+      font-style: normal;
+      font-size: 20px;
+      }
+  /* TODO Join the actions and brandmark into a div of it's own for better vertical alignment and styling */
+  .actions {
+      position: fixed;
+      top: 12px;
+      right: 0;
+      right: 12px;
+      z-index: 78;
+      /* background-color: red; */
+      transform: translate(0%, 0);
+      transition: all 1s ease-in 0s;
+ 
+  }
+  .actions__menu-bttn {
+    box-sizing: content-box;
+    padding: 4px;
+    background-color: black;
+    background-color: transparent;
+    border-radius: 4px;
+    transform: rotate(
+45deg
+);
+  }
+  /* TODO Make the menu icon much much smaller!!!  */
+  .actions__menu-bttn section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-column-gap: 4px;
+    grid-row-gap: 4px;
+    /* width: 30px; */
+    /* height: 30px; */
+    /* transform: rotate(45deg); */
+    /* TODO Make use of the rotation as an effect for opening the menu, then do something with the dots for when the menu hides */
+    }
+  .actions__menu-bttn div {
+    width: 9px;
+    height: 9px;
+      border-radius: 2px;
+      /* border-radius: 50%; */
+      /* background-color: yellow; */
+    background-color: black;
+    /* background-color: white; */
+    }
+  
+  /* ------------------------------------------ */
+  /* Main Menu
+  ** ------------------------------------------ */
+  .main-nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 76;
+      width: 100%;
+      height: 56px;
+      /* background-color: cornflowerblue; */
+      /* opacity: 1; */
+      /* transform: translate(0%, 0); */
+      /* transition: all 1s ease-in 0s; */
+  }
+  /* .main-nav.hidden {
+      -webkit-transform: translate(0, -100%);
+      -moz-transform: translate(0, -100%);
+      -ms-transform: translate(0, -100%);
+      transform: translate(0, -56px);
+      transition: all 1s ease-in 0s;
+  } */
+  
+  
+  /* .main-nav-hide .brand-signature {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 80;
+    background-color: tomato;
+  } */
+  
+  
+
+  /* ------------------------------------------ */
+  /* Local Menu
+  ** ------------------------------------------ */
+  .local-menu {
+    position: fixed;
+    top: 48px;
+    top: -48px;
+    /* top: 0; */
+    right: 0;
+    z-index: 70;
+    width: 100%;
+    height: 48px;
+    /* height: 44px; */
+    text-align: center;
+    /* background-color: lightblue; */
+    /* background-color: white; */
+    background-color: transparent;
+    /* background-color: azure; */
+    /* TODO Make this a transparent glass effect thing */
+    /* transform: translate(0%, 0); */
+    /* transition: all 1s ease-in 0s; */
+    opacity: 0s;
+  }
+  #secondary section {
+    max-width: 1056px;
+    max-width: 1280px;
+  /* background-color: palegreen; */
+  /* width: 100%; */
+  margin: 0 auto;
+  }
+  
+  .secondary__expand-bttn {
+    position: relative;
+    z-index: 70;
+    width: 100%;
+    height: 48px;
+    /* height: 44px; */
+    /* text-align: left; */
+    padding: 0;
+    border: none;
+    outline: none;
+    background: transparent;
+    background-color: black;
+    -webkit-tap-highlight-color: rgba(
+      0,
+      0,
+      0,
+      0
+    ); /* NOTE The webkit below fixes the flickering on tap Safari TODO Be sure to text that you still need this */
+    /* height: 44px; */
+  display: flex;
+  /* align-items: center; */
+  background-color: transparent;
+
+/* TODO For the black background transition you can do opacity instead of having to paint color!!!!! Or just make the button expand right then retract on close */
+
+  /* background-color: black; */
+    /* transition-delay: 2.25s; */
+    transition-property: background-color;
+    /* transition-duration: 2s; */
+    transition-duration: 0.8s;
+    transition-timing-function: ease-in;
+  /* border-bottom-right-radius: 8px;
+  border-bottom-left-radius: 8px;
+  background-color: black;
+  margin-left: 8px;
+  color: white;
+  padding: 0 16px; */
+  }
+  .secondary__expand-bttn div {
+    border-bottom-right-radius: 8px;
+    /* border-bottom-left-radius: 8px; */
+    background-color: red;
+    background-color: black;
+    /* margin-left: 8px; */
+    color: white;
+    padding: 0 16px;
+    height: 48px;
+    /* height: 44px; */
+    /* margin-bottom: 8px; */
+    display: flex;
+    align-items: center;
+  }
+  .secondary__expand-bttn-title {
+    font-size: 15px;
+    font-weight: bold;
+  }
+
+  .secondary__expand-bttn.expand {
+    /* background-color: green; */
+    background-color: black;
+      /* background-color: black; */
+    /* transition-delay: 1.25s; */
+    transition-property: background-color;
+    transition-property: background-color;
+    transition-duration: 0.05s;
+  }
+    /* .secondary__expand-bttn-title a {
+    margin: 0 12px;
+
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  text-decoration: none;
+  } */
+  
+  /* .secondary__expand-bttn-icon {
+    pointer-events: none;
+    height: 36px;
+  
+    position: absolute;
+    z-index: 76;
+    top: 0;
+    right: 0;
+  
+    margin: 0 12px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  text-decoration: none;
+  } */
+  
+  /* .secondary__expand-bttn-icon a {
+    background-color: black;
+    color: white;
+    padding: 6px 10px;
+    text-decoration: none;
+    font-size: 15px;
+    border-radius: 6px;
+    pointer-events: all;
+    margin-left: 8px;
+  } */
+  
+  .secondary__expand-bttn .chevron::before {
+    width: 0.70em;
+    height: 0.70em;
+    margin: 0 0 0 12px;
+    transition: all 300ms cubic-bezier(0.550, 0.055, 0.675, 0.190); /* easeInCubic */
+  }
+  
+  .secondary__expand-bttn-cta {
+    z-index: 100;
+    position: relative;
+    background: pink;
+    height: 36px;
+  }
+  
+  /* NOTE Used to make the chvron animation occur in the local nav bar */
+  .secondary__expand-bttn.expand .chevron.bottom::before {
+    /* top: 0.15em; */
+    /* TODO use a nother transform to clean up the drop animation */
+    transform: translateY(-0.15em);
+    transform: translateY(0.15em) rotate(-45deg);
+    
+    transform: ;
+    transition: all 500ms cubic-bezier(0.190, 1.000, 0.220, 1.000); /* easeOutExpo */
+  }
+button {
+
+}
+  .secondary__menu-list {
+    /*   padding: 0 12px; */
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    background-color: rebeccapurple;
+    background-color: antiquewhite;
+    background-color: white;
+    background-color: black;
+    color: white;
+  }
+  .secondary__menu-list .nav_menu{
+    list-style-type: none;
+  margin: 16px 32px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  }
+  
+  .secondary__menu-list .nav_menu li { 
+    margin: 8px 0 ;
+  }
+  
+  .secondary__menu-list .nav_menu li a { 
+    width: 100%;
+  }
+
+
+
+
+  /* ------------------------------------------ */
+  /* Network Menu
+  ** ------------------------------------------ */
+  .navigation__network-menu {
+    color: white;
+    background-color: black;
+    width: fit-content;
+    left: -100%;
+    position: relative;
+    transition: left 1s;
+    /* opacity: 0.4; */
+    height: 100%;
+    position: absolute;
+    top: 0;
+    /* left: 0; */
+    padding: 40px;
+    /* TODO Make use of translate/transform to animate the menu reveal */
+}
+
+.show-network-menu .navigation__network-menu {
+    left: 0%;
+    /* color: red; */
+    /* background-color: red; */
+}
+
+
+
+
+
+  /* ------------------------------------------ */
+  /* Hidden/Global Menu
+  ** ------------------------------------------ */
+  .global-menu {
+    display: none;
+}
+.hidden-menu-active {
+    overflow: hidden; /* Maintains the scroll position */
+}
+.hidden-menu-active .global-menu{
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 76;
+    display: block;
+    background-color: blanchedalmond;
+    height: 100%;
+    width: 100%;
+    /* background-color: brown; */
+}
+
+
+
+  
+  /* ------------------------------------------ */
+  /* Animations
+  ** ------------------------------------------ */
+
+  
+  .main-nav-show .actions {
+    -webkit-transform: translateX(0%);
+    -ms-transform: translateX(0%);
+    transform: translateX(0%);
+  -webkit-transition: all 500ms cubic-bezier(0.190, 1.000, 0.220, 1.000);
+     -moz-transition: all 500ms cubic-bezier(0.190, 1.000, 0.220, 1.000);
+       -o-transition: all 500ms cubic-bezier(0.190, 1.000, 0.220, 1.000);
+          transition: all 500ms cubic-bezier(0.190, 1.000, 0.220, 1.000); /* easeOutExpo */
+  }
+  .main-nav-hide .actions {
+  -webkit-transform: translateX(150%);
+  -ms-transform: translateX(150%);
+  transform: translateX(150%);
+  -webkit-transition: all 300ms cubic-bezier(0.550, 0.055, 0.675, 0.190);
+   -moz-transition: all 300ms cubic-bezier(0.550, 0.055, 0.675, 0.190);
+     -o-transition: all 300ms cubic-bezier(0.550, 0.055, 0.675, 0.190);
+        transition: all 300ms cubic-bezier(0.550, 0.055, 0.675, 0.190); /* easeInCubic */
+  }
+  
+  .main-nav-show .main-nav {
+      -webkit-transform: translateY(0%);
+      -ms-transform: translateY(0%);
+      transform: translateY(0%);
+  -webkit-transition: all 500ms cubic-bezier(0.190, 1.000, 0.220, 1.000);
+     -moz-transition: all 500ms cubic-bezier(0.190, 1.000, 0.220, 1.000);
+       -o-transition: all 500ms cubic-bezier(0.190, 1.000, 0.220, 1.000);
+          transition: all 500ms cubic-bezier(0.190, 1.000, 0.220, 1.000); /* easeOutExpo */
+  }
+  .main-nav-hide .main-nav {
+      -webkit-transform: translateY(-100%);
+      -ms-transform: translateY(-100%);
+      transform: translateY(-100%);
+  -webkit-transition: all 300ms cubic-bezier(0.550, 0.055, 0.675, 0.190);
+     -moz-transition: all 300ms cubic-bezier(0.550, 0.055, 0.675, 0.190);
+       -o-transition: all 300ms cubic-bezier(0.550, 0.055, 0.675, 0.190);
+          transition: all 300ms cubic-bezier(0.550, 0.055, 0.675, 0.190); /* easeInCubic */
+  }
+  
+  .main-nav-show .local-menu {
+    top: -48px;
+    opacity: 0;
+      -webkit-transform: translateY(-100%);
+      -ms-transform: translateY(-100%);
+      transform: translateY(-100%);
+  -webkit-transition: all 500ms cubic-bezier(0.190, 1.000, 0.220, 1.000);
+     -moz-transition: all 500ms cubic-bezier(0.190, 1.000, 0.220, 1.000);
+       -o-transition: all 500ms cubic-bezier(0.190, 1.000, 0.220, 1.000);
+          transition: all 500ms cubic-bezier(0.190, 1.000, 0.220, 1.000); /* easeOutExpo */
+  }
+  .main-nav-hide .local-menu {
+    opacity: 1;
+    top: 0;
+      -webkit-transform: translateY(0%);
+      -ms-transform: translateY(0%);
+      transform: translateY(0%);
+  -webkit-transition: all 300ms cubic-bezier(0.550, 0.055, 0.675, 0.190);
+     -moz-transition: all 300ms cubic-bezier(0.550, 0.055, 0.675, 0.190);
+       -o-transition: all 300ms cubic-bezier(0.550, 0.055, 0.675, 0.190);
+          transition: all 300ms cubic-bezier(0.550, 0.055, 0.675, 0.190); /* easeInCubic */
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ------------------------------------------ */
+/* Responsive Styles (OLD and needs to be updated or refactored completely!
+** ------------------------------------------ */
+@media only screen and (min-width: 1280px) {
+  .main-menu {
+    height: 54px;
+background-color: pink;
+top: 0;
+padding-top: 8px;
+  }
+    .main-menu nav {
+        display: block;
+        height: 100%;
+background-color: lightblue;
+    }
+    .main-menu nav ul {
+        display: flex;
+        justify-content: center;
+margin: 0 auto;
+padding: 0;
+max-width: 800px;
+list-style-type: none;
+align-items: center;
+height: 100%;
+    }
+    .main-menu nav ul li {
+        margin: 0 10px;
+    }
+
+    .local-menu {
+        /* display: grid;
+grid-template-columns: auto 1fr auto;
+grid-template-rows: 48px; */
+    }
+
+.local-menu section {
+  display: grid;
+grid-template-columns: auto 1fr auto;
+grid-template-rows: 48px;
+}
+
+
+
+
+
+    .secondary__expand-bttn-icon {
+        position: relative;
+grid-row: 1;
+grid-column: 3;
+    }
+    .secondary__expand-bttn-icon .chevron {
+        display: none;
+    }
+    .secondary__expand-bttn-title {
+        position: relative;
+grid-row: 1;
+grid-column: 1;
+    }
+
+    .secondary__menu-list {
+        max-height: 100%;
+overflow: initial;
+grid-row: 1;
+grid-column: 2;
+    }
+    .secondary__menu-list .nav_menu {
+        list-style-type: none;
+padding: 0;
+margin: 0;
+display: flex;
+justify-content: flex-end;
+
+flex-direction: row;
+align-items: center;
+height: 100%;
+
+flex-direction: row;
+height: 100%;
+align-items: center;
+    }
+    .secondary__menu-list .nav_menu li {
+        margin: 0 8px;
+    }
+    .secondary__expand-bttn
+     {
+        display: none;
+    }
+  }

@@ -1,0 +1,359 @@
+/* TODO On open make it so that it closes on click outside of the menu area */
+
+/* ------------------------------------------ */
+/* TODO Update Chevron on Local Menu // Be sure to replace this with something more appropriate like an svg
+** ------------------------------------------ */
+.chevron::before {
+    border-style: solid;
+    border-width: 0.25em 0.25em 0 0;
+    content: "";
+    display: inline-block;
+    height: 0.45em;
+    left: 0.15em;
+    position: relative;
+    top: 0.15em;
+    transform: rotate(-45deg);
+    vertical-align: top;
+    width: 0.45em;
+  }
+  
+  .chevron.right:before {
+    left: 0;
+    transform: rotate(45deg);
+  }
+  
+  .chevron.bottom:before {
+    top: 0;
+    transform: rotate(135deg);
+  }
+  
+  .chevron.left:before {
+    left: 0.25em;
+    transform: rotate(-135deg);
+  }
+
+
+
+
+.local-menu {
+    position: fixed;
+    top: 48px;
+    top: -48px;
+    /* top: 0; */
+    right: 0;
+    z-index: 70;
+    width: 100%;
+    height: 48px;
+    text-align: center;
+    /* background-color: lightblue; */
+    background-color: white;
+    /* background-color: azure; */
+    /* TODO Make this a transparent glass effect thing */
+    /* transform: translate(0%, 0); */
+    /* transition: all 1s ease-in 0s; */
+    opacity: 0s;
+  }
+  #secondary section {
+    max-width: 1056px;
+    max-width: 1280px;
+  background-color: palegreen;
+  width: 100%;
+  margin: 0 auto;
+  }
+  
+  .secondary__expand-bttn {
+    position: relative;
+    z-index: 70;
+    width: 100%;
+    height: 48px;
+    /* text-align: left; */
+    padding: 0;
+    border: none;
+    outline: none;
+    background: transparent;
+    -webkit-tap-highlight-color: rgba(
+      0,
+      0,
+      0,
+      0
+    ); /* NOTE The webkit below fixes the flickering on tap Safari TODO Be sure to text that you still need this */
+    height: 48px;
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  }
+  .secondary__expand-bttn-title {
+    height: 36px;
+    background-color: yellow;
+    position: absolute;
+    z-index: 76;
+    top: 0;
+    left: 0;
+    /* color: rgba(29, 28, 28, 1.0);
+      font-size: 16px;
+      font-weight: 700;
+      letter-spacing: .011em;
+      border-bottom: none; */
+    /*   white-space: nowrap; */
+    height: 48px;
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  margin-right: 8px;
+  }
+    .secondary__expand-bttn-title a {
+    margin: 0 12px;
+  /* height: 100%; */
+  /* display: flex; */
+  /* align-items: center; */
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  text-decoration: none;
+  }
+  
+  .secondary__expand-bttn-icon {
+    pointer-events: none;
+    height: 36px;
+    /* background-color: lightgrey; */
+  
+    position: absolute;
+    z-index: 76;
+    top: 0;
+    right: 0;
+  
+    margin: 0 12px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  text-decoration: none;
+  }
+  
+  .secondary__expand-bttn-icon a {
+    background-color: black;
+    color: white;
+    padding: 6px 10px;
+    text-decoration: none;
+    /* font-size: 15px; */
+    border-radius: 6px;
+    pointer-events: all;
+    margin-left: 8px;
+  }
+  
+  .secondary__expand-bttn-icon .chevron::before {
+    width: 0.75em;
+    height: 0.75em;
+    margin: 0 12px;
+  }
+  
+  .secondary__expand-bttn-cta {
+    z-index: 100;
+    position: relative;
+    background: pink;
+    height: 36px;
+  }
+  
+  /* NOTE Used to make the chvron animation occur in the local nav bar */
+  .mystyle .chevron.bottom::before {
+    top: 0.15em;
+    transform: rotate(-45deg);
+  }
+  .mystyle {
+    color: red;
+  }
+  .secondary__menu-list {
+    /*   padding: 0 12px; */
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    background-color: rebeccapurple;
+    background-color: antiquewhite;
+    background-color: white;
+  }
+  .secondary__menu-list .nav_menu{
+    list-style-type: none;
+  margin: 16px 32px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  }
+  
+  .secondary__menu-list .nav_menu li { 
+    margin: 8px 0 ;
+  }
+  
+  .secondary__menu-list .nav_menu li a { 
+    width: 100%;
+  }
+
+
+
+
+
+
+
+
+
+/* ------------------------------------------ */
+/* Animations
+** ------------------------------------------ */
+.scroll-show .local-menu {
+    top: -48px;
+    opacity: 0;
+      -webkit-transform: translateY(-100%);
+      -ms-transform: translateY(-100%);
+      transform: translateY(-100%);
+  -webkit-transition: all 500ms cubic-bezier(0.190, 1.000, 0.220, 1.000);
+     -moz-transition: all 500ms cubic-bezier(0.190, 1.000, 0.220, 1.000);
+       -o-transition: all 500ms cubic-bezier(0.190, 1.000, 0.220, 1.000);
+          transition: all 500ms cubic-bezier(0.190, 1.000, 0.220, 1.000); /* easeOutExpo */
+  }
+  .scroll-hide .local-menu {
+    opacity: 1;
+    top: 0;
+      -webkit-transform: translateY(0%);
+      -ms-transform: translateY(0%);
+      transform: translateY(0%);
+  -webkit-transition: all 300ms cubic-bezier(0.550, 0.055, 0.675, 0.190);
+     -moz-transition: all 300ms cubic-bezier(0.550, 0.055, 0.675, 0.190);
+       -o-transition: all 300ms cubic-bezier(0.550, 0.055, 0.675, 0.190);
+          transition: all 300ms cubic-bezier(0.550, 0.055, 0.675, 0.190); /* easeInCubic */
+  }
+
+
+
+
+  .secondary__expand-bttn {
+    position: relative;
+    z-index: 70;
+    width: 100%;
+    height: 48px;
+    /* height: 44px; */
+    /* text-align: left; */
+    padding: 0;
+    border: none;
+    outline: none;
+    background: transparent;
+    background-color: black;
+    -webkit-tap-highlight-color: rgba(
+      0,
+      0,
+      0,
+      0
+    ); /* NOTE The webkit below fixes the flickering on tap Safari TODO Be sure to text that you still need this */
+    /* height: 44px; */
+  display: flex;
+  /* align-items: center; */
+  background-color: transparent;
+
+/* TODO For the black background transition you can do opacity instead of having to paint color!!!!! Or just make the button expand right then retract on close */
+
+  /* background-color: black; */
+    /* transition-delay: 2.25s; */
+    transition-property: background-color;
+    /* transition-duration: 2s; */
+    transition-duration: 0.8s;
+    transition-timing-function: ease-in;
+  /* border-bottom-right-radius: 8px;
+  border-bottom-left-radius: 8px;
+  background-color: black;
+  margin-left: 8px;
+  color: white;
+  padding: 0 16px; */
+  }
+  .secondary__expand-bttn div {
+    border-bottom-right-radius: 8px;
+    /* border-bottom-left-radius: 8px; */
+    background-color: red;
+    background-color: black;
+    /* margin-left: 8px; */
+    color: white;
+    padding: 0 16px;
+    height: 48px;
+    /* height: 44px; */
+    /* margin-bottom: 8px; */
+    display: flex;
+    align-items: center;
+  }
+  .secondary__expand-bttn-title {
+    font-size: 15px;
+    font-weight: bold;
+  }
+
+  .secondary__expand-bttn.expand {
+    /* background-color: green; */
+    background-color: black;
+      /* background-color: black; */
+    /* transition-delay: 1.25s; */
+    transition-property: background-color;
+    transition-property: background-color;
+    transition-duration: 0.05s;
+  }
+    /* .secondary__expand-bttn-title a {
+    margin: 0 12px;
+
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  text-decoration: none;
+  } */
+  
+  /* .secondary__expand-bttn-icon {
+    pointer-events: none;
+    height: 36px;
+  
+    position: absolute;
+    z-index: 76;
+    top: 0;
+    right: 0;
+  
+    margin: 0 12px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  text-decoration: none;
+  } */
+  
+  /* .secondary__expand-bttn-icon a {
+    background-color: black;
+    color: white;
+    padding: 6px 10px;
+    text-decoration: none;
+    font-size: 15px;
+    border-radius: 6px;
+    pointer-events: all;
+    margin-left: 8px;
+  } */
+  
+  .secondary__expand-bttn .chevron::before {
+    width: 0.70em;
+    height: 0.70em;
+    margin: 0 0 0 12px;
+    transition: all 300ms cubic-bezier(0.550, 0.055, 0.675, 0.190); /* easeInCubic */
+  }
+  
+  .secondary__expand-bttn-cta {
+    z-index: 100;
+    position: relative;
+    background: pink;
+    height: 36px;
+  }
+  
+  /* NOTE Used to make the chvron animation occur in the local nav bar */
+  .secondary__expand-bttn.expand .chevron.bottom::before {
+    /* top: 0.15em; */
+    /* TODO use a nother transform to clean up the drop animation */
+    transform: translateY(-0.15em);
+    transform: translateY(0.15em) rotate(-45deg);
+    
+    transform: ;
+    transition: all 500ms cubic-bezier(0.190, 1.000, 0.220, 1.000); /* easeOutExpo */
+  }
